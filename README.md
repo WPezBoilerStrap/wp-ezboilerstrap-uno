@@ -44,4 +44,10 @@ no different. You can't have it both ways. "No pain. No gain." Correct? Not that
 community and not just the individual level.
 
 
+- Once this is a bit more settled I'm going to whip up a Child Theme example just so it's easier to see how that might be implemented. With that said, within the setup folder there's a Globals class. That too is part of wanting to be flexible.
+
+
+- Finally, the traditional theme functions.php gets a markover as well. Currently, only register sidebar (folder: setup / uno / class-wp-ezboilerstrap-register-sidebar.php) is implemented. The other major "under the hood" theme bits (e.g., enqueue scripts) will be done in a similar way. DRY and flexible! Nice, right?
+
+
 Enjoy!!
