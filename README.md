@@ -5,15 +5,14 @@ WordPress Theme: WPezBoilerStrap Uno
 
 ###In the meantime, here are some notes / thoughts that should help:
 
-##### IMPORTANT - This is a different - and ideally better - way to think about WP theme'ing. If you're looking for just add water simplicity please move on. Actually, the concept here is quite
-simple. However, within the context of tradtional WP thinking it might be a bit much for some to want to swallow. 
+##### IMPORTANT - This is a different - and ideally better - way to think about WP theme'ing. If you're looking for just add water simplicity please move on. Actually, the 
+concept here is quite simple. However, within the context of tradtional WP thinking it might be a bit much for some to want to swallow. 
 
 
 - This theme is 50% working example and 50% real theme. That is, its intention is to showcase the WP ModlVueCtrlr Theme Architecture (which is a riff on but should not be confused with proper MVC).
 
 
 - The WP ModlVueCtrlr theme architecture leans on WPezClasses: https://github.com/WPezClasses. Some of you might be put off by this. That's fine. This is not a mass market approach. 
-
 
 The objective is to remove ongoing friction from bespoke WordPress theme (and application?) development. Specifically, to allow you to build your own (and/or shared) goto library of parent themes 
 and modules / components  such that the initial build is closer to setup and configuring, with more time left for the down & dirty custom "stuff". 
@@ -41,7 +40,6 @@ Yes, not to worry, you can also use your own code just as you've always have.
 
 - Flexibility. Did I mention flexibility is also a priority. That said, there are times, just like in real life, where having more power means having greater responsibilites as well. This is
 no different. You can't have it both ways. "No pain. No gain." Correct?
-
 Not that the pain here is great. It's really more the new learning curve and embracing your new found #BadAssary. Once you get past that, the upside is nearly infinite.
 
 
