@@ -24,9 +24,7 @@ if ( !defined('ABSPATH') ) {
 	header('HTTP/1.0 403 Forbidden');
     die();
 }
-?>
 
-<?php
 $arr_header = ezbsModl::get( basename(__FILE__, '.php') ); 
 ?>
 <!DOCTYPE html>
@@ -39,15 +37,16 @@ $arr_header = ezbsModl::get( basename(__FILE__, '.php') );
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
-
+<head>
 <?php
-/**
- * The <head>...</head>
- */
+
 WP_ezMethods::ez_gtp( $arr_header['tp']['head']['slug'], $arr_header['tp']['head']['name'], $arr_header['tp']['head']['active'] );
 
-?>
+wp_head();
 
+WP_ezMethods::ez_gtp( $arr_header['tp']['before_head_tag_close']['slug'], $arr_header['tp']['before_head_tag_close']['name'], $arr_header['tp']['before_head_tag_close']['active'] );
+?>
+</head>
 <body <?php body_class(); ?>  data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="10">
 
 <?php

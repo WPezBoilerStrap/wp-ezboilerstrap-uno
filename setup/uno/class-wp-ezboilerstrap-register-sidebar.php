@@ -3,23 +3,25 @@
 if (! class_exists('Class_WP_ezBoilerStrap_Register_Sidebar') ) {
   class Class_WP_ezBoilerStrap_Register_Sidebar{
   
+    public function __construct(){
+	  add_action('widgets_init', array($this, 'ezbs_register_sizebar') );
+	}
+  
     public function ezbs_register_sidebar_base(){
 	
 	  return array (
         'active'			=> true,  	// ezBS do not use this, but you certainly could
 	    'description'   	=> 'WP ezBoilerStrap Default Description',
-	'before_widget'		=> '<div id="WP-EZC-WIDGET-ID" class="wp-ezbs-widget WP-EZC-WIDGET-CLASS">', 
-	'after_widget'		=> '</div>',
-	'before_title'		=> '<div class="wp-ezbs-widget-title">',
-	'after_title'		=> '</div>',	
-    );
-  }
-
-
-  public function ezbs_register_sizebar_args(){
-
-  $arr_return = array(
-// header above							
+		'before_widget'		=> '<div id="WP-EZC-WIDGET-ID" class="wp-ezbs-widget WP-EZC-WIDGET-CLASS">', 
+		'after_widget'		=> '</div>',
+		'before_title'		=> '<div class="wp-ezbs-widget-title">',
+		'after_title'		=> '</div>',
+		);
+	}
+	
+	public function ezbs_register_sizebar_args(){
+	  $arr_return = array(
+	    // header above							
 	'header_above_one'			=> array( 
 									'active'		=> true,
 									'id_ds_unique'	=> 'header-above-one',
@@ -373,25 +375,21 @@ if (! class_exists('Class_WP_ezBoilerStrap_Register_Sidebar') ) {
 																																										
   );
   
-  return $arr_return;
-}
+    return $arr_return;
+  }
 
 
-  public function ezbs_register_sizebar(){
+    public function ezbs_register_sizebar(){
   
-    $obj_ezbs_register_sizebar = Class_WP_ezClasses_Theme_Register_Sidebar_1::ezc_get_instance();
+      $obj_ezc_register_sizebar = Class_WP_ezClasses_Theme_Register_Sidebar_1::ezc_get_instance();
   
-    $arr_args = array(
-      'base'	 	 => $this->ezbs_register_sidebar_base(),
-      'arr_args' => $this->ezbs_register_sizebar_args()
-      );
+      $arr_args = array(
+        'base'	 	 => $this->ezbs_register_sidebar_base(),
+        'arr_args' => $this->ezbs_register_sizebar_args()
+        );
 
-    $obj_ezbs_register_sizebar->ez_rs($arr_args);
-  } 
+        $obj_ezc_register_sizebar->ez_rs($arr_args);
+    } 
+  }
 }
-}
-
 $obj_setup_register_sidebar = new Class_WP_ezBoilerStrap_Register_Sidebar;
-
-add_action('widgets_init', array($obj_setup_register_sidebar, 'ezbs_register_sizebar') );
-?>

@@ -17,23 +17,20 @@
 /*
  * == Change Log == 
  *
- * --- 19 August 2014 = Ready.
- */ 
-?>
-
-<?php
+ * --- 30 August 2014 (0.5.0) = Ready.
+ *
+ * ------------------------------------------------------------------------------------------------------
+ */
 
 $arr_aside_left_wrap = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if( ! isset($arr_aside_left_wrap['active']) || $arr_aside_left_wrap['active'] !== false )  {  
-?>
-  <aside>
-    <div class="<?php echo $arr_aside_left_wrap['css']['class'] .' wp-ezbs-aside-left'?>">
-	<?php
+if( WP_ezMethods::ez_true($arr_aside_left_wrap['active']) ){
+  
+  echo '<aside>';
+    echo '<div class="' . sanitize_text_field($arr_aside_left_wrap['markup']['class']) .' wp-ezbs-aside-left' . '">';
+
 	  WP_ezMethods::ez_gtp( $arr_aside_left_wrap['tp']['main']['slug'], $arr_aside_left_wrap['tp']['main']['name'], $arr_aside_left_wrap['tp']['main']['active'] );
-	?>	
-	</div><!-- /.span# -->
-  </aside>
-<?php
+	  
+	echo '</div>';
+  echo '</aside>';
 } 
-?>

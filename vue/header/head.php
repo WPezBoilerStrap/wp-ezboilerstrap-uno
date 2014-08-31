@@ -34,10 +34,6 @@ $arr_head = ezbsModl::get( basename(__FILE__, '.php') );
 
 if ( isset($arr_head['active']) && $arr_head['active'] === false ){
 ?>
-
-
-  <head>
-
   <title><?php wp_title("",true); ?></title>
 
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -63,16 +59,5 @@ if ( isset($arr_head['active']) && $arr_head['active'] === false ){
   <!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-	
-<?php 
-
-wp_head(); 
-
-WP_ezMethods::ez_gtp( $arr_head['tp']['before_head_tag_close']['slug'], $arr_head['tp']['before_head_tag-close']['name'], $arr_head['tp']['before_head-tag_close']['active'] );
-
-?>	
-
-</head>
-
 <?php
 }

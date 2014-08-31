@@ -11,7 +11,7 @@
  * @package WP ezBoilerStrap
  * @author Mark Simchock <mark.simchock@alchemyunited.com>
  * @since 0.5.0
- * @license TODO
+ * @license MIT
  */
 
 // No WP? Die! Now!!

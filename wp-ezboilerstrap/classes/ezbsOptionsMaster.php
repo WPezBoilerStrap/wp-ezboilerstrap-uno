@@ -451,15 +451,22 @@ if (!class_exists('ezbsOptionsMaster')) {
 			
 							'font_lobster'					=> array(
 																	'active'			=> true,
+																	'host'				=> 'google',
+																	'note'				=> 'TODO font-family:',
+																	'source'			=> 'ezbsOptions',
+																	
+																	'action'			=> array(
+																	                          'front' => true,
+																							  'admin' => false,
+																							  'login' => false,
+																							  ),
+
 																	'conditional_tags'	=> array(
 																								'tags' => array(
 																												'is_admin' => false,
 																											),
 																							),
 																	'type'				=> 'style',
-																	'host'				=> 'google',
-																	'note'				=> 'TODO font-family:',
-																	'source'			=> 'ezbsOptions',
 																	'handle'			=> 'font_google_lobster',
 																	'src'				=> 'http://fonts.googleapis.com/css?family=Lobster',
 																	'deps'				=> false,

@@ -30,18 +30,19 @@ if ( !defined('ABSPATH') ) {
 
 $arr_header_main_logo = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( isset($arr_header_main_logo['active']) && $arr_header_main_logo['active'] === true ){
-?>
-<div class="<?php echo sanitize_text_field($arr_header_main_logo['css']['class_left'])?>">
-  <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-    <img style="width:50px" src="<?php echo get_stylesheet_directory_uri() ?>/screenshot.png" alt="<?php echo get_bloginfo( 'name', 'display' ) . ' - ' . get_bloginfo( 'description', 'display' ) ?>">
-  </a>
-</div>	
+if ( WP_ezMethods::ez_true($arr_header_main_logo['active']) ){
 
-<div class="<?php echo sanitize_text_field($arr_header_main_logo['css']['class_right'])?>">
-  <h2><?php echo get_bloginfo( 'name', 'display' ); ?></h2>
-  <h5><?php echo get_bloginfo( 'description', 'display' ); ?></h5>
-</div>
+echo '<div class="' . sanitize_text_field($arr_header_main_logo['markup']['left_class']) . '">';
+  echo '<a class="' . sanitize_text_field($arr_header_main_logo['markup']['link_class_left']) . '" href="' . home_url( '/' ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
+   echo '<img class="' . sanitize_text_field($arr_header_main_logo['markup']['img_class']) . '"src="' . get_stylesheet_directory_uri() . '/screenshot.png" alt="' . get_bloginfo( 'name', 'display' ) . ' - ' . get_bloginfo( 'description', 'display' ) . '">';
+  echo '</a>';
+echo '</div>';
 
-<?php
+echo '<div class="' . sanitize_text_field($arr_header_main_logo['markup']['right_class']) . '">';
+  echo '<a class="' . sanitize_text_field($arr_header_main_logo['markup']['link_class_right']) . '" href="' . home_url( '/' ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
+    echo '<h2>' . get_bloginfo( 'name', 'display' ) . '</h2>';
+    echo '<h5>' . get_bloginfo( 'description', 'display' ) . '</h5>';
+  echo '</a>';
+echo '</div>';
+
 }

@@ -1,6 +1,6 @@
 <?php
 /** 
- * Short description TODO
+ * Displays the sort control for a posts list
  *
  * Long description TODO (@link http://)
  *
@@ -17,27 +17,26 @@
 /*
  * == Change Log == 
  *
- * --- 22 August 2014 - Ready
+ * --- 30 August 2014 (0.5.0) = Ready.
+ *
+ * ------------------------------------------------------------------------------------------------------
  */
-
+ 
 if ( !defined('ABSPATH') ) {
 	header('HTTP/1.0 403 Forbidden');
     die();
 }
-?>
-
-<?php
 
 $arr_index_sort_control = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( isset($arr_index_sort_control['active']) &&  $arr_index_sort_control['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_index_sort_control['active']) ){
 
-  if ( ! empty($arr_index_sort_control['markup']['control']) ){
+  if ( ! empty($arr_index_sort_control['markup']['control']) && is_string($arr_index_sort_control['markup']['control']) ){
  
     echo '<div class="' . sanitize_text_field($arr_index_sort_control['markup']['class']) . '">';
-  
-    echo $arr_index_sort_control['markup']['control'];
-	
+	  echo '<nav>';
+        echo $arr_index_sort_control['markup']['control'];
+	  echo '</nav>';
     echo '</div>';
     echo '<div class="clearfix"></div>';
   }

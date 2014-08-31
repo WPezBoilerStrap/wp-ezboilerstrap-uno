@@ -1,67 +1,54 @@
 <?php
+/** 
+ * Post meta below the content
+ *
+ * TODO - Long Description @link http://)
+ *
+ * PHP version 5.3
+ *
+ * LICENSE: MIT
+ *
+ * @package WP ezBoilerStrap
+ * @author Mark Simchock <@ChiefAlchemist1> for Alchemy United <@AlchemyUnited>
+ * @since 0.5.0
+ * @license MIT
+ */
+ 
 /*
-* @package WordPress
-* @subpackage WPezBoilerStrap
-* @since WP ezBoilerStrap 0.5.0
-*
-* --------------------------------------------
-* -- index-post-meta-below.php
-* --------------------------------------------
-*
-* - CHANGE LOG ---
-*
-* -- 31 July 2013 = Ready
-*
-* --------------------------------------------
-*/
-
+ * == Change Log == 
+ *
+ * --- 30 August 2014 (0.5.0) = Ready.
+ *
+ * ------------------------------------------------------------------------------------------------------
+ */
+ 
 // No WP? Die! Now!!
 if (!defined('ABSPATH')) {
 	header( 'HTTP/1.0 403 Forbidden' );
     die();
 }
-?>
 
-<?php
-echo "TODO - index-post-meta-below.php";
-if (1==2){
-$obj_ezc_taxonomies_methods = wpezTaxonomiesClassesMethods::ezc_get_instance();
+$arr_index_post_meta_below = ezbsModl::get( basename(__FILE__, '.php') );
 
-echo '<div class="clearfix"></div>';
-echo '<span id="wp-ezbs-index-post-meta-below">';
-echo '<div class="row">';
+if ( WP_ezMethods::ez_true($arr_index_post_meta_below['active']) ){
+
+global $post;
+  
+  echo '<div class="' . sanitize_text_field($arr_index_post_meta_below['markup']['wrap_class']) . ' wp-ezbs-index-meta  wp-ezbs-index-meta-below' . '">';
+  
 echo '<p class="meta wp-ezbs-meta-above">';
-echo '<span class="meta wp-ezbs-meta-above">';
-
-
-$wp_ezbs_arr_cat_args = array(
-	'echo'			=> true,	
-	'label'			=> 'Categories:',
-	'taxonomies'	=> array('category'),
-	'args'			=> array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'all'),
-	'ul_id'			=> 'ezbs-tax-post-category-list',
-	'ul_class'		=> 'ezbs-tax-post-category-list',
+echo '<h1>TODO - Meta Below</h1>';
+printf( __( '<span class="sep">Published: </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'bootstrap' ),
+	esc_url( get_permalink() ),
+	esc_attr( get_the_time() ),
+	esc_attr( get_the_date( 'c' ) ),
+	esc_html( get_the_date() ),
+	esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+	esc_attr( sprintf( __( 'View all posts by %s', 'bootstrap' ), get_the_author() ) ),
+	esc_html( get_the_author() )
 );
+echo '</p> <!-- /.class -->';
 
-$obj_ezc_taxonomies_methods->object_terms_layout_v1( $wp_ezbs_arr_cat_args);
+  echo '</div>';
 
-$wp_ezbs_arr_tag_args = array(
-	'echo'			=> true,	
-	'label' 		=> 'Tags:',
-	'taxonomies'	=> array('post_tag'),
-	'args'			=> array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'all'),
-	'ul_id'			=> 'ezbs-tax-post-tag-list',
-	'ul_class'		=> 'ezbs-tax-post-tag-list',
-);
-
-$obj_ezc_taxonomies_methods->object_terms_layout_v1( $wp_ezbs_arr_tag_args);
-
-echo "TODO - Style these lists";
-
-echo '</span>';
-echo '</p> <!-- /.meta -->';
-echo '</div>';
-echo '</span> <!-- / #wp-ezbs-index-gtp-inc-post-meta-below -->';
 }
-?>
-

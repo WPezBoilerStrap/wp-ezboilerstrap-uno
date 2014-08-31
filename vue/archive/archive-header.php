@@ -17,28 +17,34 @@
 /*
  * == Change Log == 
  *
- * --- 22 August 2014 - Ready
+ * --- 30 August 2014 (0.5.0) = Ready.
+ *
+ * ------------------------------------------------------------------------------------------------------
  */
 
 if ( !defined('ABSPATH') ) {
 	header('HTTP/1.0 403 Forbidden');
     die();
 }
-?>
-
-<?php
 
 $arr_archive_header = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( isset($arr_archive_header['active']) &&  $arr_archive_header['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_archive_header['active']) ){
 
-  echo '<div class="' . sanitize_text_field($arr_archive_header['markup']['wrap_class']) . '">';
-    echo '<h2 class="' . sanitize_text_field($arr_archive_header['markup']['headline_class']) . '">' . sanitize_text_field($arr_archive_header['markup']['tag_title']) . '</h2>';
+  echo '<section>';
+    echo '<div class="' . sanitize_text_field($arr_archive_header['markup']['wrap_class']) . '">';
+	
+      echo '<' . sanitize_text_field($arr_archive_header['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_archive_header['markup']['title_class']) . ' wp-ezbs-archive-header' . '">';
+	    echo sanitize_text_field($arr_archive_header['markup']['title']);
+	  echo '</' . sanitize_text_field($arr_archive_header['markup']['title_tag']) .  '>';
 
-    if ( isset($arr_archive_header['markup']['description_active']) &&  $arr_archive_header['markup']['description_active'] === true ){
+      if ( WP_ezMethods::ez_true($arr_archive_header['markup']['description_active']) ){
 	
-      echo '<div class="' . sanitize_text_field($arr_archive_header['markup']['description_class']) . '">' . sanitize_text_field($arr_archive_header['markup']['tag_description']) . '</div>';
-    }
-	
-  echo '</div>'; // close wrap
+        echo '<div class="' . sanitize_text_field($arr_archive_header['markup']['description_class']) . ' wp-ezbs-archive-description' . '">';
+		  echo sanitize_text_field($arr_archive_header['markup']['description']);
+		echo '</div>';
+      }
+	  
+    echo '</div>'; // close wrap
+  echo '</section>';
 }

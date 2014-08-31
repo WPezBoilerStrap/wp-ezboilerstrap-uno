@@ -1,37 +1,43 @@
 <?php
+/** 
+ * Post meta above the content
+ *
+ * TODO - Long Description @link http://)
+ *
+ * PHP version 5.3
+ *
+ * LICENSE: MIT
+ *
+ * @package WP ezBoilerStrap
+ * @author Mark Simchock <@ChiefAlchemist1> for Alchemy United <@AlchemyUnited>
+ * @since 0.5.0
+ * @license MIT
+ */
+ 
 /*
-* @package WordPress
-* @subpackage WPezBoilerStrap
-* @since WP ezBoilerStrap 0.5.0
-*
-* --------------------------------------------
-* -- index-post-meta-above.php
-* --------------------------------------------
-*
-* - CHANGE LOG ---
-*
-* -- 4 Mar 2013 = Ready
-*
-*
-* - TODO ----
-* - How this is done needs to re refactored. 
-*
-* --------------------------------------------
-*/
-
+ * == Change Log == 
+ *
+ * --- 30 August 2014 (0.5.0) = Ready.
+ *
+ * ------------------------------------------------------------------------------------------------------
+ */
+ 
 // No WP? Die! Now!!
 if (!defined('ABSPATH')) {
 	header( 'HTTP/1.0 403 Forbidden' );
     die();
 }
-?>
 
-<?php
+$arr_index_post_meta_above = ezbsModl::get( basename(__FILE__, '.php') );
+
+if ( WP_ezMethods::ez_true($arr_index_post_meta_above['active']) ){
 
 global $post;
-
-echo '<span id="wp-ezbs-index-post-meta-above">';
-echo '<p class="meta wp-ezbs-meta-above">TODO index-post-meta-above --- ';
+  
+  echo '<div class="' . sanitize_text_field($arr_index_post_meta_above['markup']['wrap_class']) . ' wp-ezbs-index-meta  wp-ezbs-index-meta-above' . '">';
+  
+echo '<p class="meta wp-ezbs-meta-above">';
+echo '<h1>TODO - Meta Above</h1>';
 printf( __( '<span class="sep">Published: </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'bootstrap' ),
 	esc_url( get_permalink() ),
 	esc_attr( get_the_time() ),
@@ -42,7 +48,7 @@ printf( __( '<span class="sep">Published: </span><a href="%1$s" title="%2$s" rel
 	esc_html( get_the_author() )
 );
 echo '</p> <!-- /.class -->';
-echo '</span> <!-- / #wp-ezbs-index-post-meta-above -->';
 
-?>
+  echo '</div>';
 
+}

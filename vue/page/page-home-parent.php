@@ -31,11 +31,11 @@ if (!defined('ABSPATH')) {
 
 $arr_page_home_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( ! isset($arr_page_home_parent['active']) || $arr_page_home_parent['active'] !== false ){
+if ( WP_ezMethods::ez_true($arr_page_home_parent['active']) ){
 ?>
-	<div class="<?php  echo sanitize_text_field($arr_page_home_parent['markup']['wrap_class']) ?>">
-		<div class="container">
-			<div class="row content">
+  <div class="<?php  echo sanitize_text_field($arr_page_home_parent['markup']['wrap_class']) ?>">
+    <div class="container">
+      <div class="row content">
 
 				<?php
 				
@@ -51,8 +51,8 @@ if ( ! isset($arr_page_home_parent['active']) || $arr_page_home_parent['active']
 				WP_ezMethods::ez_gtp( $arr_page_home_parent['tp']['aside_right']['slug'], $arr_page_home_parent['tp']['aside_right']['name'], $arr_page_home_parent['tp']['aside_right']['active'] );
 
 				?>
-			</div> <!-- /.row -->
-		</div> <!-- /.container -->
-	</div> <!-- /.jumbotron -->
+	  </div> 
+    </div> 
+  </div> 
 <?
 }

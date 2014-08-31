@@ -39,35 +39,51 @@ if (! class_exists('Class_WP_ezBoilerStrap_Globals')) {
 	static public $str_setup_dir				= 'setup';
 	
 	// ezbsGlobals::$str_working - child of the setup that's the current working folder
+	
 	static public $str_working					= 'uno';
 	
-	static public $str_gtp_name					= '';
-	static public $bool_gtp						= true;				
-		
-		static public $str_options_master_camel		= '';			// ezbsGlobals::str_options_master				- Got a different OptionsMaster? What is it?
-
-		// TODO - there might be an easier way. Find it. 
-		static public $str_path_from_wp_to_theme	= 'wp-content/themes/wp-ezboilerstrap-uno';		
-		
+	// functions.php > add_theme_support
+	static public $str_ats_working				= 'uno';
+	static public $str_ats_name					= '';
+	static public $bool_ats						= true;	
 	
-		/**
-		 * Note: We're not using the construct other than to get "global" properties defined in the master parent
-		 */
-		protected function __construct(){
-			parent::__construct(); 
-		}
+	// functions.php > register_sidebar
+	static public $str_rs_working				= 'uno';
+	static public $str_rs_name					= '';
+	static public $bool_rs						= true;		
+
+    // functions.php > register_nav_menus
+	static public $str_rnm_working				= 'uno';
+	static public $str_rnm_name					= '';
+	static public $bool_rnm						= true;	
+	
+    // functions.php > add_image_size
+	static public $str_ais_working				= 'uno';
+	static public $str_ais_name					= '';
+	static public $bool_ais						= true;	
+
+    // functions.php > register and enqueue scripts and styles
+	static public $str_re_working				= 'uno';
+	static public $str_re_name					= '';
+	static public $bool_re						= true;		
+
+	
+	/**
+	 * Note: We're not using the construct other than to get "global" properties defined in the master parent
+	 */
+	protected function __construct(){
+	  parent::__construct(); 
+	}
 		
-		public function ezc_init(){
+	public function ezc_init(){
 			//$this->ezbs_globals_init();
-		}
+	}
 		
-		public function ezbs_globals_init(){
+	public function ezbs_globals_init(){
 	
-		}	
+	}	
 
-	} //close class
+  } //close class
 } // close class_exists
 
 class_alias('Class_WP_ezBoilerStrap_Globals', 'ezbsGlobals');
-
-?>

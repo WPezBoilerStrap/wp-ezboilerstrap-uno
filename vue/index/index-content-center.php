@@ -1,38 +1,39 @@
 <?php
-/**
-* @package WordPress
-* @subpackage WPezBoilerStrap
-* @since WP ezBoilerStrap 0.5.0
-*
-* --------------------------------------------
-* -- index-content-center.php
-* --------------------------------------------
-*
-* - CHANGE LOG ---
-*
-* -- 4 Mar 2013 = Ready
-*
-* --------------------------------------------
-*/
+/** 
+ * Wrapper for the primary partsof the index page
+ *
+ * TODO - Long Description @link http://)
+ *
+ * PHP version 5.3
+ *
+ * LICENSE: MIT
+ *
+ * @package WP ezBoilerStrap
+ * @author Mark Simchock <@ChiefAlchemist1> for Alchemy United <@AlchemyUnited>
+ * @since 0.5.0
+ * @license MIT
+ */
+ 
+/*
+ * == Change Log == 
+ *
+ * --- 30 August 2014 (0.5.0) = Ready.
+ *
+ * ------------------------------------------------------------------------------------------------------
+ */
 
 // No WP? Die! Now!!
 if (!defined('ABSPATH')) {
 	header( 'HTTP/1.0 403 Forbidden' );
     die();
 }
-?>
-
-<?php
 
 $arr_index_content_center = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( isset($arr_index_content_center['active']) &&  $arr_index_content_center['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_index_content_center['active']) ){
 
-?>
+  echo '<div class="' . sanitize_text_field($arr_index_content_center['markup']['wrap_class']) . ' wp-ezbs-content-center' . '">';
 
-<div class="<?php echo sanitize_text_field($arr_index_content_center['markup']['wrap_class']) ?> wp-ezbs-content-center">
-
-  <?php	
   
   WP_ezMethods::ez_gtp( $arr_index_content_center['tp']['archive_header']['slug'], $arr_index_content_center['tp']['archive_header']['name'], $arr_index_content_center['tp']['archive_header']['active'] );		
 				

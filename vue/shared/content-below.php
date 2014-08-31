@@ -14,14 +14,14 @@
  * @license TODO
  */
  
-/*
+ /*
  * == Change Log == 
  *
- * --- 20 August 2014 - Ready
+ * --- 30 August 2014 (0.5.0) = Ready.
+ *
+ * ------------------------------------------------------------------------------------------------------
  */
-?>
-
-<?php
+ 
 if ( !defined('ABSPATH') ) {
 	header('HTTP/1.0 403 Forbidden');
     die();
@@ -29,14 +29,15 @@ if ( !defined('ABSPATH') ) {
 
 $arr_content_below = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( ! isset($arr_content_below['active']) || $arr_content_below['active'] !== false ){
+if ( WP_ezMethods::ez_true($arr_content_below['active']) ){
   /**
    * In Admin > Appearance > Widgets, has a widget been placed in the defined dynamic sidebar && is the bool status === true
    */
-  if ( is_active_sidebar($arr_content_below['ds']['one']['index']) && $arr_content_below['ds']['one']['active'] !== false ) {
-  
-    echo '<div class="' . $arr_content_below['ds']['one']['css']['class'] . ' wp-ezbs-content-below' . '">';
-	  dynamic_sidebar($arr_content_below['ds']['one']['index']);
-	echo '</div>';
+  if ( is_active_sidebar($arr_content_below['ds']['one']['index']) && $arr_content_below['ds']['one']['active'] === true ) {
+    echo '<section>';  
+      echo '<div class="' . $arr_content_below['ds']['one']['markup']['class'] . ' wp-ezbs-content-below' . '">';
+	    dynamic_sidebar($arr_content_below['ds']['one']['index']);
+	  echo '</div>';
+    echo '</section>';
   }
 }

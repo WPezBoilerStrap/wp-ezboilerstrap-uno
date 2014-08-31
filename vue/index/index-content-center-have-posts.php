@@ -1,20 +1,26 @@
 <?php
+/** 
+ * There are posts to display and this is where we're going to do it.
+ *
+ * TODO - Long Description @link http://)
+ *
+ * PHP version 5.3
+ *
+ * LICENSE: MIT
+ *
+ * @package WP ezBoilerStrap
+ * @author Mark Simchock <@ChiefAlchemist1> for Alchemy United <@AlchemyUnited>
+ * @since 0.5.0
+ * @license MIT
+ */
+ 
 /*
-* @package WordPress
-* @subpackage WPezBoilerStrap
-* @since WP ezBoilerStrap 0.5.0
-*
-* --------------------------------------------
-* -- index-content-center-while-have-posts.php
-* --------------------------------------------
-*
-* - CHANGE LOG ---
-*
-* -- 1 August 2013 = Ready
-*
-* --------------------------------------------
-*/
-
+ * == Change Log == 
+ *
+ * --- 30 August 2014 (0.5.0) = Ready.
+ *
+ * ------------------------------------------------------------------------------------------------------
+ */
 
 // No WP? Die! Now!!
 if (!defined('ABSPATH')) {
@@ -22,52 +28,50 @@ if (!defined('ABSPATH')) {
     die();
 }
 
-?>
-
-<?php
 $arr_index_content_center_have_posts = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( isset($arr_index_content_center_have_posts['active']) &&  $arr_index_content_center_have_posts['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_index_content_center_have_posts['active']) ){
 
-?>
-  <div class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['wrap_class']) ?>">
-  
+  echo '<div class="' . sanitize_text_field($arr_index_content_center_have_posts['markup']['wrap_class']) . '">';
+ ?> 
 	<div id="post-<?php the_ID() ?>" <?php post_class() ?>">
 	
-		<a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
+		<a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title();?>">
 		
-			<h1 class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['headline_class']) ?>"><?php the_title();?></h1>
+			<<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['title_tag']) ?> class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['title_class']) ?>"><?php echo get_the_title();?></<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['title_tag']) ?>>
 		</a>
 		<?php
 		
 		  WP_ezMethods::ez_gtp( $arr_index_content_center_have_posts['tp']['meta_above']['slug'], $arr_index_content_center_have_posts['tp']['meta_above']['name'], $arr_index_content_center_have_posts['tp']['meta_above']['active'] )
-		  
-		  //get_template_part('index-post-meta-above', ezbsGlobals::$str_child_slug_hyphen);
-
 		?>
 		</p>
+		<?php 
+		// the thumbnail
+		if ( has_post_thumbnail() ){ ?>
+		  <div class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['img_wrap_class']) ?> wp-ezbs-post-thumbnail-wrap">
+		  
+		    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>">
+			  <?php get_the_post_thumbnail($arr_index_content_center_have_posts['markup']['post_thumbnail_args']);?>
+			</a>
 		
-		<div class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['row_wrap_class']) ?>">
-			<div class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['row_left_class']) ?>">
-			  <?php // Checking for a post thumbnail
-				if ( has_post_thumbnail() ) { ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>">
-						<?php the_post_thumbnail();?>
-					</a>
-				<?php } ?>	
-			</div><!-- /.span2 -->
-			<div class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['row_right_class']) ?>">
-				<?php echo get_the_excerpt();?>
-			</div><!-- /.span6 -->
-			
-			<?php 
-			
-			WP_ezMethods::ez_gtp( $arr_index_content_center_have_posts['tp']['meta_below']['slug'], $arr_index_content_center_have_posts['tp']['meta_below']['name'], $arr_index_content_center_have_posts['tp']['meta_below']['active'] )
-
-			?>
-			
-		</div><!-- /.row -->
-	</div><!-- /.post_class -->
-  </div><!-- / wrap -->
+		  </div>
+		<?php
+		}
+		// the excerpt
+		$str_the_excerpt = get_the_excerpt();
+		if ( ! empty($str_the_excerpt) ){
+		?>
+		  <div class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['excerpt_wrap_class']) ?> wp-ezbs-the-excerpt">
+		  
+		    <?php echo $str_the_excerpt; ?>
+				
+		  </div>
+		<?php 
+		}
+		
+		WP_ezMethods::ez_gtp( $arr_index_content_center_have_posts['tp']['meta_below']['slug'], $arr_index_content_center_have_posts['tp']['meta_below']['name'], $arr_index_content_center_have_posts['tp']['meta_below']['active'] )
+		?>
+	</div>
+  </div>
 <?php
 }
