@@ -19,6 +19,9 @@ as well as modules / components (aka template parts aka vues) such that the init
 - DRY (i.e., don't repeat yourself) is another top priority (and thus the love for WPezClasses).
 
 
+- SRP makes sense as well (http://en.wikipedia.org/wiki/Single_responsibility_principle).
+
+
 - With WP ModlVueCtrlr the Vue(s) strives to be only the structure of the (traditional) theme. They are implemented via a series of (traditional) WP template parts. Note: Currently, there can 
 be some logic in a Vue. I know that's not the trending ideal but I also don't see it as - within the context of WordPress way of thinking - a deal breaker at the moment. 
 
