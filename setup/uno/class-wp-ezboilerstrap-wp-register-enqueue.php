@@ -86,6 +86,26 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
 		//	'in_footer'			=>	NULL,	// in_footer is required for type: script - both are listed for consistency / convenience
 		),
 		
+		'wp_comment_reply' => array(	
+			'active'			=> true,
+			'host'				=> 'wp core',					// for internal use
+			'note'				=> 'TODO',						// for internal use
+			'conditional_tags'	=> array(
+			  'tags' => array(
+			    'is_singular'		=> true,
+				'get_option'		=> 'thread_comments',
+				'is_front_page'		=> false,
+			    ),
+			), // example of only load on the 404: array('tags' => array('is_404' => true)),
+			'type'				=> 'script',
+			'handle'			=> 'comment-reply',
+			//'src'				=> '//na',
+			'deps'				=> array(),
+			'ver'				=> 'wp_3.9.x',
+		//	'media'				=> NULL,
+			'in_footer'			=> true,
+		),
+
 	  );
 	  
 	  return $arr_return;
