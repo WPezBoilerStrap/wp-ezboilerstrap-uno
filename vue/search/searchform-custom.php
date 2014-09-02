@@ -30,7 +30,8 @@ if ( !defined('ABSPATH') ) {
 
 $arr_searchform_custom = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( ! isset($arr_searchform_custom['active']) || $arr_searchform_custom['active'] !== false ){
+if ( WP_ezMethods::ez_true($arr_searchform_custom['active']) ){
+
   global $wp_query;
 
   $str_to_return = '';

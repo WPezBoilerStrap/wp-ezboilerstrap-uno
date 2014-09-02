@@ -33,7 +33,7 @@ get_header();
 
 $arr_404 = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( isset($arr_404['active']) &&  $arr_404['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_404['active']) ){
 
   WP_ezMethods::ez_gtp( $arr_404['tp']['404_parent']['slug'], $arr_404['tp']['404_parent']['name'], $arr_404['tp']['404_parent']['active'] );
 }

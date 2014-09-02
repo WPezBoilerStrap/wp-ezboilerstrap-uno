@@ -59,19 +59,18 @@ if ( WP_ezMethods::ez_true($arr_index_content_center_have_posts['active']) ){
 		}
 		// the excerpt
 		$str_the_excerpt = get_the_excerpt();
+		
 		if ( ! empty($str_the_excerpt) ){
-		?>
-		  <div class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['excerpt_wrap_class']) ?> wp-ezbs-the-excerpt">
+
+		   echo '<div class="' . sanitize_text_field($arr_index_content_center_have_posts['markup']['excerpt_wrap_class']) . ' wp-ezbs-the-excerpt">';
 		  
-		    <?php echo $str_the_excerpt; ?>
+		    echo $str_the_excerpt;
 				
-		  </div>
-		<?php 
+		  echo '</div>';
+
 		}
 		
-		WP_ezMethods::ez_gtp( $arr_index_content_center_have_posts['tp']['meta_below']['slug'], $arr_index_content_center_have_posts['tp']['meta_below']['name'], $arr_index_content_center_have_posts['tp']['meta_below']['active'] )
-		?>
-	</div>
-  </div>
-<?php
+		WP_ezMethods::ez_gtp( $arr_index_content_center_have_posts['tp']['meta_below']['slug'], $arr_index_content_center_have_posts['tp']['meta_below']['name'], $arr_index_content_center_have_posts['tp']['meta_below']['active'] );
+	echo '</div>';
+  echo '</div>';
 }

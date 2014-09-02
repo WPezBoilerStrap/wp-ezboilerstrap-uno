@@ -21,19 +21,16 @@
  */
  
 // No WP? Die! Now!!
-if (!defined('ABSPATH')) {
+if ( ! defined('ABSPATH')) {
 	header( 'HTTP/1.0 403 Forbidden' );
     die();
 }
-?>
-
-<?php 
 
 get_header();
 
 $arr_page = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( isset($arr_page['active']) &&  $arr_page['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_page['active']) ){
 
   WP_ezMethods::ez_gtp( $arr_page['tp']['page_parent']['slug'], $arr_page['tp']['page_parent']['name'], $arr_page['tp']['page_parent']['active'] );
 

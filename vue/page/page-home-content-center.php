@@ -26,7 +26,7 @@ $arr_page_home_content_center = ezbsModl::get( basename(__FILE__, '.php') );
 
 if ( WP_ezMethods::ez_true($arr_page_home_content_center['active']) ){
   
-  echo '<div class="' . sanitize_text_field($arr_page_home_content_center['markup']['wrap_class']) . ' wp-ezbs-column-center' . '">';
+  echo '<div class="' . sanitize_text_field($arr_page_home_content_center['markup']['wrap_class']) . ' wp-ezbs-content-center' . '">';
     
 	WP_ezMethods::ez_gtp( $arr_page_home_content_center['tp']['title_above']['slug'], $arr_page_home_content_center['tp']['title_above']['name'], $arr_page_home_content_center['tp']['title_above']['active'] );
 	

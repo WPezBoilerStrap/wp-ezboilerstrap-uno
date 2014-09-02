@@ -30,13 +30,13 @@ if ( !defined('ABSPATH') ) {
 
 $arr_single_next_prev_control = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( isset($arr_single_next_prev_control['active']) &&  $arr_single_next_prev_control['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_single_next_prev_control['active']) ){
 
   if ( ! empty($arr_single_next_prev_control['markup']['control']) ){
  
     echo '<div class="' . sanitize_text_field($arr_single_next_prev_control['markup']['class']) . '">';
   
-    echo $arr_single_next_prev_control['markup']['control'];
+      echo $arr_single_next_prev_control['markup']['control'];
 	
     echo '</div>';
     echo '<div class="clearfix"></div>';

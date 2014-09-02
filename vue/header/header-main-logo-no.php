@@ -1,6 +1,6 @@
 <?php
 /** 
- * Example of a main header without a logo
+ * Example of a main header without a logo. This is a TODO
  *
  * You're probebly going to want to do your own
  *
@@ -30,7 +30,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_header_main_logo_no = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( isset($arr_header_main_logo_no['active']) && $arr_header_main_logo_no['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_header_main_logo_no['active']) ){
 
 ?>
 

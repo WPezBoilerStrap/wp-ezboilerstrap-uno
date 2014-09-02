@@ -17,7 +17,7 @@
 /*
  * == Change Log == 
  *
- * --- 23 August 2014 - Ready
+ * --- 31 August 2014 - Ready
  */
 ?>
 
@@ -25,9 +25,9 @@
 
 $arr_search_content_center = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( ! isset($arr_search_content_center['active']) || $arr_search_content_center['active'] !== false ){	
+if ( WP_ezMethods::ez_true($arr_search_content_center['active']) ){	
 
-	echo '<div class="' . sanitize_text_field($arr_search_content_center['markup']['search_wrap_class'])  . ' wp-ezbs-search-wrap-class">';
+  echo '<div class="' . sanitize_text_field($arr_search_content_center['markup']['search_wrap_class'])  . ' wp-ezbs-search-wrap-class">';
 	  
 	/**
      * TODO - clean up ezClass Theme Search class
@@ -43,41 +43,33 @@ if ( ! isset($arr_search_content_center['active']) || $arr_search_content_center
 	  get_search_form();
 	}
 	
-	echo '</div><!--/.well -->';
+	echo '</div>';
 	
-	
-?>
-  <div class="<?php echo sanitize_text_field($arr_search_content_center['markup']['wrap_class']) ?> wp-ezbs-search-content-center">
-
-  <?php
+    echo '<div class="' . sanitize_text_field($arr_search_content_center['markup']['wrap_class']) . ' wp-ezbs-search-content-center">';
   
-  WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['title_above']['slug'], $arr_search_content_center['tp']['title_above']['name'], $arr_search_content_center['tp']['title_above']['active'] );
+      WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['title_above']['slug'], $arr_search_content_center['tp']['title_above']['name'], $arr_search_content_center['tp']['title_above']['active'] );
 
-  WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['search_title']['slug'], $arr_search_content_center['tp']['search_title']['name'], $arr_search_content_center['tp']['search_title']['active'] );
+      WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['search_title']['slug'], $arr_search_content_center['tp']['search_title']['name'], $arr_search_content_center['tp']['search_title']['active'] );
 	
-  WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['title_below']['slug'], $arr_search_content_center['tp']['title_below']['name'], $arr_search_content_center['tp']['title_below']['active'] );
+      WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['title_below']['slug'], $arr_search_content_center['tp']['title_below']['name'], $arr_search_content_center['tp']['title_below']['active'] );
 		
-  // search found sommething!	
-  if ( have_posts() ){
+     // search found sommething!	
+     if ( have_posts() ){
   
-    WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['next_prev']['slug'], $arr_search_content_center['tp']['next_prev']['name'], $arr_search_content_center['tp']['next_prev']['active'] );		
+       WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['next_prev']['slug'], $arr_search_content_center['tp']['next_prev']['name'], $arr_search_content_center['tp']['next_prev']['active'] );		
 	
-	WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['sort']['slug'], $arr_search_content_center['tp']['next_prev']['name'], $arr_search_content_center['tp']['next_prev']['active'] );		
+	   WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['sort']['slug'], $arr_search_content_center['tp']['next_prev']['name'], $arr_search_content_center['tp']['next_prev']['active'] );		
 				
-	WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['have_posts']['slug'], $arr_search_content_center['tp']['have_posts']['name'], $arr_search_content_center['tp']['have_posts']['active'] );		
+	   WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['have_posts']['slug'], $arr_search_content_center['tp']['have_posts']['name'], $arr_search_content_center['tp']['have_posts']['active'] );		
 
-	WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['search_title']['slug'], $arr_search_content_center['tp']['search_title']['name'], $arr_search_content_center['tp']['search_title']['active'] );
+	   WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['search_title']['slug'], $arr_search_content_center['tp']['search_title']['name'], $arr_search_content_center['tp']['search_title']['active'] );
 	
-	} else {
+	  } else {
 	
-	 // TODO?
-	}
+	   // TODO?
+	  }
 	
+	  WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['content_below']['slug'], $arr_search_content_center['tp']['content_below']['name'], $arr_search_content_center['tp']['content_below']['active'] );		
 
-	WP_ezMethods::ez_gtp( $arr_search_content_center['tp']['content_below']['slug'], $arr_search_content_center['tp']['content_below']['name'], $arr_search_content_center['tp']['content_below']['active'] );		
-
-	?>
-
-	</div> <!-- / .span# -->
-<?php
+	  echo '</div>';
 }

@@ -19,10 +19,6 @@
  *
  * --- 
  */
-?>
-
-
-<?php
 
 if ( !defined('ABSPATH') ) {
 	header('HTTP/1.0 403 Forbidden');
@@ -31,7 +27,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_footer = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( isset($arr_footer['active']) && $arr_footer['active'] === true ){	
+if ( WP_ezMethods::ez_true($arr_footer['active']) ){	
 
   WP_ezMethods::ez_gtp( $arr_footer['tp']['footer_parent']['slug'], $arr_footer['tp']['footer_parent']['name'], $arr_footer['tp']['footer_parent']['active'] );
 

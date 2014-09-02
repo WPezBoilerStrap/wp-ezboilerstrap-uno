@@ -24,13 +24,11 @@ if ( !defined('ABSPATH') ) {
 	header('HTTP/1.0 403 Forbidden');
     die();
 }
-?>
 
-<?php
 
 $arr_archive_content_below_above = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( isset($arr_archive_content_below_above['active']) &&  $arr_archive_content_below_above['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_archive_content_below_above['active']) ){
 
   echo '<p>- - TODO: archive / ' . basename(__FILE__, '.php') . ' - - </p>';
 

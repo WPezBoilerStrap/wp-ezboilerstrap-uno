@@ -43,23 +43,16 @@ if ( WP_ezMethods::ez_true($arr_index_parent['active']) ){
    */
   WP_ezMethods::ez_gtp( $arr_index_parent['tp']['content_above_below']['slug'], $arr_index_parent['tp']['content_above_below']['name'], $arr_index_parent['tp']['content_above_below']['active'] );
 
-?>
 
-  <div class="container clearfix">
-    <div class="row content">
-
-<?php 
+  echo '<div class="' . sanitize_text_field($arr_index_parent['markup']['container_class']) . '">';
+    echo '<div class="' . sanitize_text_field($arr_index_parent['markup']['row_class']) . '">';
 
     WP_ezMethods::ez_gtp( $arr_index_parent['tp']['aside_left']['slug'], $arr_index_parent['tp']['aside_left']['name'], $arr_index_parent['tp']['aside_left']['active'] );
 
     WP_ezMethods::ez_gtp( $arr_index_parent['tp']['main']['slug'], $arr_index_parent['tp']['main']['name'], $arr_index_parent['tp']['main']['active'] );
 
     WP_ezMethods::ez_gtp( $arr_index_parent['tp']['aside_right']['slug'], $arr_index_parent['tp']['aside_right']['name'], $arr_index_parent['tp']['aside_right']['active'] );
-
-?>
 			
-    </div> <!-- / .row .content -->
-  </div> <!-- / .container -->
-	
-<?php 
+    echo '</div>';
+  echo '</div>';
 }

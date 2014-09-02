@@ -17,7 +17,7 @@
 /*
  * == Change Log == 
  *
- * --- 20 August 2014 = Ready.
+ * --- 30 August 2014 = Ready.
  */
  
  
@@ -25,13 +25,10 @@ if ( !defined('ABSPATH') ) {
 	header('HTTP/1.0 403 Forbidden');
     die();
 }
-?>
-
-<?php
 
 $arr_header_parent = ezbsModl::get( basename(__FILE__, '.php') ); 	
 
-if ( isset($arr_header_parent['active']) && $arr_header_parent['active'] === true ) {
+if ( WP_ezMethods::ez_true($arr_header_parent['active']) ) {
   
   WP_ezMethods::ez_gtp( $arr_header_parent['tp']['header_above']['slug'], $arr_header_parent['tp']['header_above']['name'], $arr_header_parent['tp']['header_above']['active'] );
 		

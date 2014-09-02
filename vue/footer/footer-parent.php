@@ -17,11 +17,9 @@
 /*
  * == Change Log == 
  *
- * --- 21 August 2014 = Ready.
+ * --- 31 August 2014 = Ready.
  */
-?>
 
-<?php
 if ( !defined('ABSPATH') ) {
 	header('HTTP/1.0 403 Forbidden');
     die();
@@ -29,7 +27,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_footer_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( isset($arr_footer_parent['active']) && $arr_footer_parent['active'] === true ){	
+if ( WP_ezMethods::ez_true($arr_footer_parent['active']) ){	
 	
   echo '<footer>';
 

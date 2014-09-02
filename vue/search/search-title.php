@@ -17,7 +17,7 @@
 /*
  * == Change Log == 
  *
- * --- 22 August 2014 - Ready
+ * --- 31 August 2014 - Ready
  */
 
 if ( !defined('ABSPATH') ) {
@@ -30,18 +30,20 @@ if ( !defined('ABSPATH') ) {
 
 $arr_search_title = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( isset($arr_search_title['active']) &&  $arr_search_title['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_search_title['active']) ){
 
-  echo '<h3 class="' . sanitize_text_field($arr_search_title['markup']['title_headline_class']) .  '">';
+  // title
+  echo '<' . sanitize_text_field($arr_search_title['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_search_title['markup']['title_class']) .  '">';
   
-  echo sanitize_text_field($arr_search_title['markup']['title']);
+    echo sanitize_text_field($arr_search_title['markup']['title']);
   
-  echo '</h3>';
-
-  echo '<h1 class="' . sanitize_text_field($arr_search_title['markup']['query_headline_class']) . '">';
+  echo '</' . sanitize_text_field($arr_search_title['markup']['title_tag']) . '>';
   
-  echo sanitize_text_field($arr_search_title['markup']['get_search_query']);
+  // query
+  echo '<' . sanitize_text_field($arr_search_title['markup']['query_tag']) . ' class="' . sanitize_text_field($arr_search_title['markup']['query_class']) . '">';
+  
+    echo sanitize_text_field($arr_search_title['markup']['get_search_query']);
 	
-  echo '</h1>';
+  echo '</' . sanitize_text_field($arr_search_title['markup']['query_tag']) . '>';
   
 }

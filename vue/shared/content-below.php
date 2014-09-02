@@ -29,15 +29,17 @@ if ( !defined('ABSPATH') ) {
 
 $arr_content_below = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_content_below['active']) ){
-  /**
-   * In Admin > Appearance > Widgets, has a widget been placed in the defined dynamic sidebar && is the bool status === true
-   */
-  if ( is_active_sidebar($arr_content_below['ds']['one']['index']) && $arr_content_below['ds']['one']['active'] === true ) {
-    echo '<section>';  
-      echo '<div class="' . $arr_content_below['ds']['one']['markup']['class'] . ' wp-ezbs-content-below' . '">';
-	    dynamic_sidebar($arr_content_below['ds']['one']['index']);
+if( WP_ezMethods::ez_true($arr_content_below['active']) )  {  
+
+  foreach ( $arr_content_below['ds'] as $str_key => $arr_value){
+	
+    if ( WP_ezMethods::ez_ias( $arr_content_below['ds'][$str_key]['index'], $arr_content_below['ds'][$str_key]['active']) ) {
+	
+      echo '<div class="' . sanitize_text_field($arr_footer_below['ds'][$str_key]['markup']['class']) . ' wp-ezbs-content-below' . '">';
+	  
+	    WP_ezMethods::ez_ds($arr_content_below['ds'][$str_key]['index'], $arr_content_below['ds'][$str_key]['active'] );
+		
 	  echo '</div>';
-    echo '</section>';
+    }		
   }
 }

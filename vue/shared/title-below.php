@@ -17,7 +17,7 @@
 /*
  * == Change Log == 
  *
- * --- 20 August 2014 - Ready
+ * --- 30 August 2014 - Ready
  */
 ?>
 
@@ -29,14 +29,17 @@ if ( !defined('ABSPATH') ) {
 
 $arr_title_below = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( ! isset($arr_title_below['active']) || $arr_title_below['active'] !== false ){
-  /**
-   * In Admin > Appearance > Widgets, has a widget been placed in the defined dynamic sidebar && is the bool status === true
-   */
-  if ( is_active_sidebar($arr_title_below['ds']['one']['index']) && $arr_title_below['ds']['one']['active'] !== false ) {
-  
-    echo '<div class="' . $arr_title_below['ds']['one']['css']['class'] . ' wp-ezbs-title-below' . '">';
-	  dynamic_sidebar($arr_title_below['ds']['one']['index']);
-	echo '</div>';
+if ( WP_ezMethods::ez_true($arr_title_below['active']) ){
+
+  foreach ( $arr_title_below['ds'] as $str_key => $arr_value){
+	
+    if ( WP_ezMethods::ez_ias( $arr_title_below['ds'][$str_key]['index'], $arr_title_below['ds'][$str_key]['active']) ) {
+	
+      echo '<section>';
+        echo '<div class="' . anitize_text_field($arr_title_below['ds'][$str_key]['markup']['class']) . ' wp-ezbs-content-above' . '">';
+	      dynamic_sidebar($arr_title_below['ds'][$str_key]['index']);
+	    echo '</div>';
+      echo '</section>';
+    }
   }
 }

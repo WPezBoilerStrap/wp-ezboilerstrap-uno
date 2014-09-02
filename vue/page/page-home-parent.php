@@ -25,9 +25,6 @@ if (!defined('ABSPATH')) {
 	header( 'HTTP/1.0 403 Forbidden' );
     die();
 }
-?>
-
-<?php
 
 $arr_page_home_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 

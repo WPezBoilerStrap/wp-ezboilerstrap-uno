@@ -29,11 +29,11 @@ if ( !defined('ABSPATH') ) {
 
 $arr_breadcrumbs = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if (  isset($arr_breadcrumbs['active']) && $arr_breadcrumbs['active'] === true ){
+if (  WP_ezMethods::ez_true($arr_breadcrumbs['active']) ){
   
-  echo '<div class="container">';
-    echo '<div class="row">';
-	  echo '<div class="' . sanitize_text_field($arr_breadcrumbs['markup']['class']) . ' wp-ezbs-breadcrumbs' . '">';
+  echo '<div class="' . sanitize_text_field($arr_breadcrumbs['markup']['container_class'])  . '">';
+    echo '<div class="' . sanitize_text_field($arr_breadcrumbs['markup']['row_class']) . '">';
+	  echo '<div class="' . sanitize_text_field($arr_breadcrumbs['markup']['inner_wrap_class']) . ' wp-ezbs-breadcrumbs' . '">';
 	    echo '<nav>';
 		  echo $arr_breadcrumbs['markup']['control'];
 	    echo '</nav>';

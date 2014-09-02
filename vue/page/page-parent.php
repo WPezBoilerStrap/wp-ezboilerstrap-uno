@@ -17,7 +17,7 @@
 /*
  * == Change Log == 
  *
- * --- 19 August 2014 - Ready
+ * --- 31 August 2014 - Ready
  */
  
 // No WP? Die! Now!!
@@ -25,41 +25,27 @@ if (!defined('ABSPATH')) {
 	header( 'HTTP/1.0 403 Forbidden' );
     die();
 }
-?>
-
-<?php
 
 $arr_page_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( ! isset($arr_page_parent['active']) || $arr_page_parent['active'] !== false ){
+if ( WP_ezMethods::ez_true($arr_page_parent['active']) ){
 
   while ( have_posts() ) : the_post(); 
-		
-		WP_ezMethods::ez_gtp( $arr_page_parent['tp']['breadcrumbs']['slug'], $arr_page_parent['tp']['breadcrumbs']['name'], $arr_page_parent['tp']['breadcrumbs']['active'] );
-		
-		WP_ezMethods::ez_gtp( $arr_page_parent['tp']['content_above']['slug'], $arr_page_parent['tp']['content_above']['name'], $arr_page_parent['tp']['content_above']['active'] );
-							
-		?>
-		
-		<div class="container">
-		  <div class="row content">
-		  
-		  <?php 
-		  
-		  WP_ezMethods::ez_gtp( $arr_page_parent['tp']['aside_left']['slug'], $arr_page_parent['tp']['aside_left']['name'], $arr_page_parent['tp']['aside_left']['active'] );
-		  
-		  WP_ezMethods::ez_gtp( $arr_page_parent['tp']['main']['slug'], $arr_page_parent['tp']['main']['name'], $arr_page_parent['tp']['main']['active'] );
-		  
-		  WP_ezMethods::ez_gtp( $arr_page_parent['tp']['aside_right']['slug'], $arr_page_parent['tp']['aside_right']['name'], $arr_page_parent['tp']['aside_right']['active'] );
-					
-		  ?>
-		   </div> <!-- / .row .content -->
-		 </div> <!-- / .container -->
-
-		
-	<?php 
+  
+    WP_ezMethods::ez_gtp( $arr_page_parent['tp']['breadcrumbs']['slug'], $arr_page_parent['tp']['breadcrumbs']['name'], $arr_page_parent['tp']['breadcrumbs']['active'] );
 	
-	endwhile; // end of the loop. 
-
-
+	WP_ezMethods::ez_gtp( $arr_page_parent['tp']['content_above']['slug'], $arr_page_parent['tp']['content_above']['name'], $arr_page_parent['tp']['content_above']['active'] );
+	
+	echo '<div class="' . sanitize_text_field($arr_page_parent['markup']['container']) . '">';
+	  echo '<div class="' . sanitize_text_field($arr_page_parent['markup']['row']) . '">';
+	  
+	    WP_ezMethods::ez_gtp( $arr_page_parent['tp']['aside_left']['slug'], $arr_page_parent['tp']['aside_left']['name'], $arr_page_parent['tp']['aside_left']['active'] );
+		
+		WP_ezMethods::ez_gtp( $arr_page_parent['tp']['main']['slug'], $arr_page_parent['tp']['main']['name'], $arr_page_parent['tp']['main']['active'] );
+		
+		WP_ezMethods::ez_gtp( $arr_page_parent['tp']['aside_right']['slug'], $arr_page_parent['tp']['aside_right']['name'], $arr_page_parent['tp']['aside_right']['active'] );
+					
+      echo '</div>';
+    echo '</div>';
+  endwhile; 
 }

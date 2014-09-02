@@ -15,7 +15,7 @@
  */
 
 // No WP? Die! Now!!
-if (!defined('ABSPATH')) {
+if ( ! defined('ABSPATH')) {
 	header( 'HTTP/1.0 403 Forbidden' );
     die();
 }

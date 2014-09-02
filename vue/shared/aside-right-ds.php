@@ -17,7 +17,7 @@
 /*
  * == Change Log == 
  *
- * --- 19 August 2014 = Ready.
+ * --- 31 August 2014 = Ready.
  */
 ?>
 
@@ -25,18 +25,15 @@
 
 $arr_aside_right_ds = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-// TODO - check to see if each is active before echo'ing anything out. More or less the way it used to be
-
-if( ! isset($arr_aside_right_ds['active']) || $arr_aside_right_ds['active'] !== false )  {  
+if ( WP_ezMethods::ez_true($arr_aside_right_ds['active']) )  {  
 
   foreach ( $arr_aside_right_ds['ds'] as $str_key => $arr_value){
 	
     if ( WP_ezMethods::ez_ias( $arr_aside_right_ds['ds'][$str_key]['index'], $arr_aside_right_ds['ds'][$str_key]['active']) ) {
 	
-      echo '<div class="' . sanitize_text_field($arr_footer_below['ds'][$str_key]['css']['class']) . ' wp-ezbs-header-above' . '">';
+      echo '<div class="' . sanitize_text_field($arr_footer_below['ds'][$str_key]['markup']['class']) . ' wp-ezbs-aside wp-ezbs-aside-right' . '">';
 	    WP_ezMethods::ez_ds($arr_aside_right_ds['ds'][$str_key]['index'], $arr_aside_right_ds['ds'][$str_key]['active'] );
 	  echo '</div>';
     }		
   }
 }
-?>

@@ -2,7 +2,7 @@
 /** 
  * A GTP just prior to the </head>
  *
- * Example: Snippet from Google Tag Manager would go here. 
+ * Example: Google Tag Manager snippet from would go here. 
  *
  * PHP version 5.3
  *
@@ -17,7 +17,7 @@
 /*
  * == Change Log == 
  *
- * --- 20 August 2014 - Ready
+ * --- 30 August 2014 - Ready
  */
  
 // No WP? Die! Now!!

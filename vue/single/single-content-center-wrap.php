@@ -28,13 +28,10 @@ if ( !defined('ABSPATH') ) {
 
 $arr_single_content_center_wrap = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( ! isset($arr_single_content_center_wrap['active']) || $arr_single_content_center_wrap['active'] !== false ){
+if ( WP_ezMethods::ez_true($arr_single_content_center_wrap['active']) ){
 
-?>
-  <div class="<?php echo sanitize_text_field($arr_single_content_center_wrap['markup']['wrap_class']) . ' wp-ezbs-content-center-wrap'?>">
+  echo '<div class="' . sanitize_text_field($arr_single_content_center_wrap['markup']['wrap_class']) . ' wp-ezbs-content-center-wrap wp-ezbs-single-content-center-wrap' . '">';
 
-  <?php 
-  
     WP_ezMethods::ez_gtp( $arr_single_content_center_wrap['tp']['title_above']['slug'], $arr_single_content_center_wrap['tp']['title_above']['name'], $arr_single_content_center_wrap['tp']['title_above']['active'] );
 
 	WP_ezMethods::ez_gtp( $arr_single_content_center_wrap['tp']['main']['slug'], $arr_single_content_center_wrap['tp']['main']['name'], $arr_single_content_center_wrap['tp']['main']['active'] );

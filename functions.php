@@ -34,8 +34,7 @@ if ( !class_exists('WP_ezBoilerStrap_Uno') ){
 		
 			// Note: If you want to use a child theme of this parent be sure its priority for after_setup_theme is sooner than this (25).
 		  add_action('after_setup_theme', array($this, 'ezbs_uno_setup'), 25);
-			
-		 // add_action('after_setup_theme', array($this, 'ezbs_theme_setup_general'), 30);
+		
 		}
 		
 		public function ezbs_uno_setup(){
@@ -54,7 +53,6 @@ if ( !class_exists('WP_ezBoilerStrap_Uno') ){
 			  include_once('modl/ezbsModl.php');
 			}
 			
-
 			$str_setup = ezbsGlobals::$str_setup_dir;
 			
 			/**
@@ -83,34 +81,12 @@ if ( !class_exists('WP_ezBoilerStrap_Uno') ){
 			WP_ezMethods::ez_gtp( $str_setup . '/' . ezbsGlobals::$str_re_working . '/' . 'class-wp-ezboilerstrap-wp-register-enqueue', ezbsGlobals::$str_re_name, ezbsGlobals::$bool_re);			
 
 			
-			load_theme_textdomain('wp_ezboilerstrap_uno', get_template_directory() . '/languages');
+			load_theme_textdomain('wp_ezbs_uno', get_template_directory() . '/languages');
 			if ( ! isset($content_width) ) {
 				$content_width = 1000;
 			}
 					
 		} // close: hook: after_theme_setup > function: ezbs_parent_instantiate()
-
-
-								
-		
-		/**
-		* TODO - ezClasses this. make it presets or something. 
-		*/		
-		public function ezbs_theme_setup_general() {
-		
-			if ( function_exists( 'add_theme_support' ) ) {
-				add_theme_support( 'automatic-feed-links' );
-				add_theme_support( 'post-thumbnails'); 
-				
-				/* TODO
-				
-				http://codex.wordpress.org/Function_Reference/add_theme_support
-				
-				add_theme_support( 'custom-background', $defaults); 
-				add_theme_support( 'custom-header', $defaults); 
-				*/
-			}
-		}
 
 	} // close class
 } // close if class

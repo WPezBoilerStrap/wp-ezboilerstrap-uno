@@ -47,11 +47,8 @@ wp_head();
 WP_ezMethods::ez_gtp( $arr_header['tp']['before_head_tag_close']['slug'], $arr_header['tp']['before_head_tag_close']['name'], $arr_header['tp']['before_head_tag_close']['active'] );
 ?>
 </head>
-<body <?php body_class(); ?>  data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="10">
+<body <?php body_class(); ?>  data-spy="<?php echo sanitize_text_field($arr_header['markup']['data_spy'])?>" data-target="<?php echo sanitize_text_field($arr_header['markup']['data_target'])?>" data-offset="<?php echo sanitize_text_field($arr_header['markup']['data_offset'])?>">
 
 <?php
 
 WP_ezMethods::ez_gtp( $arr_header['tp']['header_parent']['slug'], $arr_header['tp']['header_parent']['name'], $arr_header['tp']['header_parent']['active'] );
-
-?>
-<!-- End Header -->

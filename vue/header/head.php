@@ -28,7 +28,7 @@ if (!defined('ABSPATH')) {
 
 $arr_head = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( isset($arr_head['active']) && $arr_head['active'] === false ){
+if ( WP_ezMethods::ez_true($arr_head['active']) ){
 ?>
   <title><?php wp_title("",true); ?></title>
 

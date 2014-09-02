@@ -19,9 +19,14 @@
  *
  * --- 21 August 2014 = Ready.
  */
-?>
 
-<div class="container">
-  <p class="pull-right"><a href="#">Back to top</a></p>
-  <p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y') ?></p>
-</div>
+ 
+$arr_footer_bottom = ezbsModl::get( basename(__FILE__, '.php') ); 
+
+if ( WP_ezMethods::ez_true($arr_footer_bottom['active']) ){
+
+  echo '<div class="' . sanitize_text_field($arr_footer_bottom['markup']['container_class']) . '">';
+    echo '<p class="' . sanitize_text_field($arr_footer_bottom['markup']['left_class']) . '">' . sanitize_text_field($arr_footer_bottom['markup']['left_text']). '</p>';
+    echo '<p class="' . sanitize_text_field($arr_footer_bottom['markup']['right_class']) . '"><a href="#">' . sanitize_text_field($arr_footer_bottom['markup']['right_text']) . '</a></p>';
+  echo '</div>';
+}

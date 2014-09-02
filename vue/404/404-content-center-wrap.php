@@ -16,12 +16,8 @@
 /*
  * == Change Log ==
  *
- * -- 4 August 2013 - Ready!
+ * -- 31 August 2014 - Ready!
  */
-
-?>
-404-content-center-wrap.php
-<?php
 
 if ( !defined('ABSPATH') ) {
 	header('HTTP/1.0 403 Forbidden');
@@ -30,9 +26,9 @@ if ( !defined('ABSPATH') ) {
 
 $arr_404_content_center_wrap = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( ! isset($arr_404_content_center_wrap['active']) || $arr_404_content_center_wrap['active'] !== false ){
+if ( WP_ezMethods::ez_true($arr_404_content_center_wrap['active']) ){
 
-  echo '<div class="' . sanitize_text_field($arr_404_content_center_wrap['css']['class']) . ' wp-ezbs-content-center-wrap">';
+  echo '<div class="' . sanitize_text_field($arr_404_content_center_wrap['markup']['class']) . ' wp-ezbs-content-center-wrap">';
 
     WP_ezMethods::ez_gtp( $arr_404_content_center_wrap['tp']['title_above']['slug'], $arr_404_content_center_wrap['tp']['title_above']['name'], $arr_404_content_center_wrap['tp']['title_above']['active'] );
 
@@ -43,5 +39,4 @@ if ( ! isset($arr_404_content_center_wrap['active']) || $arr_404_content_center_
 	WP_ezMethods::ez_gtp( $arr_404_content_center_wrap['tp']['content_below']['slug'], $arr_404_content_center_wrap['tp']['content_below']['name'], $arr_404_content_center_wrap['tp']['content_below']['active'] );
 
   echo '</div> <!-- / .span# -->';
-
 }

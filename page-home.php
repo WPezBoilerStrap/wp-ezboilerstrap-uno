@@ -33,7 +33,7 @@ get_header();
 
 $arr_page_home = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( isset($arr_page_home['active']) && $arr_page_home['active'] === true ){
+if ( WP_ezMethods::ez_true($arr_page_home['active']) ){
 
   WP_ezMethods::ez_gtp( $arr_page_home['tp']['home_parent']['slug'], $arr_page_home['tp']['home_parent']['name'], $arr_page_home['tp']['home_parent']['active'] );
 }
