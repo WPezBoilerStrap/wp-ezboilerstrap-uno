@@ -45,7 +45,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
 		),
 		
 	    'jquery_cnd' => array(
-			'active'			=> true,
+			'active'			=> false,
 			'host'				=> 'google',					// for internal use
 			'note'				=> 'TODO',						// for internal use
 			'conditional_tags'	=> array(),
@@ -66,7 +66,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
 			'type'				=> 'script',
 			'handle'			=> 'bootstrap_js',
 			'src'				=> '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js',
-			'deps'				=> array('jquery_cnd'),
+			'deps'				=> array('jquery'),
 			'ver'				=> 'maxcdn_3.2.0',
 		//	'media'				=> NULL,
 			'in_footer'			=> true,

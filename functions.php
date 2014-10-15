@@ -23,6 +23,7 @@ if ( !class_exists('WP_ezBoilerStrap_Uno') ){
 	class WP_ezBoilerStrap_Uno extends Class_WP_ezClasses_Master_Singleton{
 	
 		protected function __construct(){
+	
 			parent::__construct();
 		}
 		

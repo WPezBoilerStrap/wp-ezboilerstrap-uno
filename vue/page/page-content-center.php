@@ -33,9 +33,9 @@ if ( WP_ezMethods::ez_true($arr_page_content_center['active']) ){
   echo '<header>';
     echo '<' . sanitize_text_field($arr_page_content_center['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_page_content_center['markup']['title_class']) . ' wp-ezbs-page-title-class wp-ezbs-title-class' . '">';
 	
-	  echo get_the_title()
+	  echo get_the_title();
 	
-	echo '</' . sanitize_text_field($arr_page_content_center['markup']['title_tag']) . '>'
+	echo '</' . sanitize_text_field($arr_page_content_center['markup']['title_tag']) . '>';
   echo '</header>';
 
   WP_ezMethods::ez_gtp( $arr_page_content_center['tp']['title_below']['slug'], $arr_page_content_center['tp']['title_below']['name'], $arr_page_content_center['tp']['title_below']['active'] );

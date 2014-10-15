@@ -40,6 +40,7 @@ if ( WP_ezMethods::ez_true($arr_header_main['active']) ){
       echo '<div class="' . sanitize_text_field($arr_header_main['ds'][$str_key]['markup']['class']) . ' wp-ezbs-header-main' . '">';
 	    WP_ezMethods::ez_ds($arr_header_main['ds'][$str_key]['index'], $arr_header_main['ds'][$str_key]['active']);
 	  echo '</div>';
+	  
     }
   }
 }
