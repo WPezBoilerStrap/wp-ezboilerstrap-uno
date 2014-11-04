@@ -84,6 +84,11 @@ if ( !class_exists('WP_ezBoilerStrap_Uno') ){
 			/**
 			 * Class_WP_ezBoilerStrap_Other - not any of the above
 			 */
+			WP_ezMethods::ez_gtp( $str_setup . '/' . ezbsGlobals::$str_dr_working . '/' . 'class-wp-ezboilerstrap-document-ready', ezbsGlobals::$str_dr_name, ezbsGlobals::$bool_dr);	
+			
+			/**
+			 * Class_WP_ezBoilerStrap_Other - not any of the above
+			 */
 			WP_ezMethods::ez_gtp( $str_setup . '/' . ezbsGlobals::$str_oth_working . '/' . 'class-wp-ezboilerstrap-other', ezbsGlobals::$str_oth_name, ezbsGlobals::$bool_oth);			
 
 			
