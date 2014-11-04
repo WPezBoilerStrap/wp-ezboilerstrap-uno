@@ -57,7 +57,7 @@ if ( !class_exists('WP_ezBoilerStrap_Uno') ){
 			$str_setup = ezbsGlobals::$str_setup_dir;
 			
 			/**
-			 * Class_WP_ezBoilerStrap_WP_Register Enqueue - register and enqueue scripts and styles
+			 * Class_WP_ezBoilerStrap_Add_Theme_Support
 			 */
 			WP_ezMethods::ez_gtp( $str_setup . '/' . ezbsGlobals::$str_ats_working . '/' . 'class-wp-ezboilerstrap-add-theme-support', ezbsGlobals::$str_ats_name, ezbsGlobals::$bool_ats);			
 
