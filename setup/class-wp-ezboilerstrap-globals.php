@@ -8,7 +8,7 @@
  *
  * LICENSE: TODO
  *
- * @package WP ezBoilerStrap
+ * @package WPezBoilerStrap
  * @author Mark Simchock <mark.simchock@alchemyunited.com>
  * @since 0.5.0
  * @license TODO
@@ -65,7 +65,12 @@ if (! class_exists('Class_WP_ezBoilerStrap_Globals')) {
     // functions.php > register and enqueue scripts and styles
 	static public $str_re_working				= 'uno';
 	static public $str_re_name					= '';
-	static public $bool_re						= true;		
+	static public $bool_re						= true;	
+
+    // functions.php > other (as in none of the above)
+	static public $str_oth_working				= 'uno';
+	static public $str_oth_name					= '';
+	static public $bool_oth						= true;		
 
 	
 	/**

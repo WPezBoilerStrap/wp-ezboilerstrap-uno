@@ -4,7 +4,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
   class Class_WP_ezBoilerStrap_WP_Register_Enqueue{
   
     public function __construct(){
-	
+
 	  add_action('init', array($this, 'ezbs_wp_register_enqueue'));
 
 	}
@@ -50,7 +50,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
 			'note'				=> 'TODO',						// for internal use
 			'conditional_tags'	=> array(),
 			'type'				=> 'script',
-			'handle'			=> 'jquery_cnd',
+			'handle'			=> 'jquery_cdn',
 			'src'				=> '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
 			'deps'				=> array(),
 			'ver'				=> 'google_2.1.1',
@@ -66,7 +66,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
 			'type'				=> 'script',
 			'handle'			=> 'bootstrap_js',
 			'src'				=> '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js',
-			'deps'				=> array('jquery'),
+			'deps'				=> array('jquery_cdn'),
 			'ver'				=> 'maxcdn_3.2.0',
 		//	'media'				=> NULL,
 			'in_footer'			=> true,
@@ -111,6 +111,32 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
 	  return $arr_return;
 	}
 	
+	
+    /**
+     * NOT IN USE - Placehold / example
+     */
+	public function ezbs_wp_login_enqueue_args(){
+  
+      $arr_return = array ();
+	  
+	  return $arr_return;
+	}
+
+	
+    /**
+     * NOT IN USE - Placehold / example
+     */
+	public function ezbs_wp_admin_enqueue_args(){
+  
+      $arr_return = array ();
+	  
+	  return $arr_return;
+	}
+	  
+	
+	/**
+	 *
+	 */
     public function ezbs_wp_register_enqueue(){
 	
 	  add_action('wp_enqueue_scripts', array($this, 'wp_enqueue_scripts'));
@@ -143,13 +169,13 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
   
 	  $obj_ezc_wp_enqueue = Class_WP_ezClasses_ezCore_WP_Enqueue::ezc_get_instance();
   
-      $arr_args['arr_args'] = $this->ezbs_wp_enqueue_args();
+      $arr_args['arr_args'] = $this->ezbs_wp_login_enqueue_args();
   
        // register'em
       $obj_ezc_wp_enqueue->ez_rs($arr_args);
 	
       // now enqueue'em
-      $obj_ezc_wp_enqueue->wp_enqueue_do($this->ezbs_wp_enqueue_args());
+      $obj_ezc_wp_enqueue->wp_enqueue_do($this->ezbs_wp_login_enqueue_args());
     }
   
     /**
@@ -159,13 +185,13 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
     
 	  $obj_ezc_wp_enqueue = Class_WP_ezClasses_ezCore_WP_Enqueue::ezc_get_instance();
   
-      $arr_args['arr_args'] = $this->ezbs_wp_enqueue_args();
+      $arr_args['arr_args'] = $this->ezbs_wp_admin_enqueue_args();
   
        // register'em
       $obj_ezc_wp_enqueue->ez_rs($arr_args);
 	
       // now enqueue'em
-      $obj_ezc_wp_enqueue->wp_enqueue_do($this->ezbs_wp_enqueue_args());
+      $obj_ezc_wp_enqueue->wp_enqueue_do($this->ezbs_wp_admin_enqueue_args());
     }
   }
 }

@@ -81,6 +81,11 @@ if ( !class_exists('WP_ezBoilerStrap_Uno') ){
 			 */
 			WP_ezMethods::ez_gtp( $str_setup . '/' . ezbsGlobals::$str_re_working . '/' . 'class-wp-ezboilerstrap-wp-register-enqueue', ezbsGlobals::$str_re_name, ezbsGlobals::$bool_re);			
 
+			/**
+			 * Class_WP_ezBoilerStrap_Other - not any of the above
+			 */
+			WP_ezMethods::ez_gtp( $str_setup . '/' . ezbsGlobals::$str_oth_working . '/' . 'class-wp-ezboilerstrap-other', ezbsGlobals::$str_oth_name, ezbsGlobals::$bool_oth);			
+
 			
 			load_theme_textdomain('wp_ezbs_uno', get_template_directory() . '/languages');
 			if ( ! isset($content_width) ) {
