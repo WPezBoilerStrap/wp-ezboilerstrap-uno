@@ -14,7 +14,29 @@ if (! class_exists('Class_WP_ezBoilerStrap_Document_Ready') ) {
 	
 	public function ezbs_other_1(){
 	
-	  $arr_args = array();
+	  ob_start()
+	  ?>
+	  <script type="text/javascript">
+	    $ = jQuery;
+	    $(document).ready(function() {
+	    <?php 
+		
+		$this->js1();
+		
+		?>
+	  });
+	  </script>
+	  <?php
+	  ob_end_flush();
+	}
+	
+	protected function js1(){
+	
+	  ob_start()
+	  ?>
+
+	  <?php
+	  ob_end_flush();
 	
 	}
 	
