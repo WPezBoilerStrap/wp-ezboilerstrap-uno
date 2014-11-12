@@ -31,8 +31,9 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Image_Size') ) {
 			'select'	=> 'Ratio: Square'		// what's the displayed select sting.
 			),
 		  'picturefill'		=> array(			// Not required for Class_WP_ezClasses_Theme_Add_Image_Size_1 but very useful for Class_WP_ezClasses_Templates_Picturefill_js
-		    'active'	=> true,				// active? 
-		    'bp'		=> 'w',					// what's the bp (breakpoint). for more details see Class_WP_ezClasses_Templates_Picturefill_js
+		    'active'				=> true,	// active? 
+		    'w'						=> 'w',		// what's the 'w' (width). for more details see Class_WP_ezClasses_Templates_Picturefill_js
+			'exclude_from_sizes'	=> array()  // a list of sizes[] keys that this should be excluded from.
 			),
 		),	  
 	  
@@ -51,8 +52,9 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Image_Size') ) {
 			'select'	=> 'Ratio: Widescreen'
 			),
 		  'picturefill'		=> array(
-		    'active'	=> true,
-		    'bp'		=> 600,			
+		    'active'				=> true,
+		    'w'						=> 600,	
+			'exclude_from_sizes'	=> array()			
 			),
 		),	  
 	  
@@ -70,8 +72,9 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Image_Size') ) {
 			'select'	=> 'Ratio: Widescreen'
 			),
 		  'picturefill'		=> array(
-		    'active'	=> true,
-		    'bp'		=> 768,			
+		    'active'				=> true,
+		    'w'						=> 768,	
+			'exclude_from_sizes'	=> array()			
 			),
 		),
 		
@@ -89,8 +92,9 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Image_Size') ) {
 			'select'	=> 'Ratio: Widescreen'
 			),
 		  'picturefill'		=> array(
-		    'active'	=> true,
-		    'bp'		=> 992,			
+		    'active'				=> true,
+		    'w'						=> 992,	
+			'exclude_from_sizes'	=> array()			
 			),
 		),
 		
@@ -108,8 +112,9 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Image_Size') ) {
 			'select'	=> 'Ratio: Widescreen'
 			),
 		  'picturefill'		=> array(		
-		    'active'	=> true,
-		    'bp'		=> 1200,			
+		    'active'				=> true,
+		    'w'						=> 1200,
+			'exclude_from_sizes'	=> array()				
 			),
 		),		
 		
@@ -127,8 +132,9 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Image_Size') ) {
 			'select'	=> 'Ratio: Widescreen'
 			),
 		  'picturefill'		=> array(		
-		    'active'	=> true,
-		    'bp'		=> 1200,			
+		    'active'				=> true,
+		    'w'						=> 1200,
+			'exclude_from_sizes'	=> array()				
 			),
 		),
 		
@@ -146,8 +152,9 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Image_Size') ) {
 			'select'	=> 'Ratio: Widescreen'
 			),
 		  'picturefill'		=> array(
-		    'active'	=> true,
-		    'bp'		=> 'w',			
+		    'active'				=> true,
+		    'w'						=> 'w',
+			'exclude_from_sizes'	=> array()				
 			),
 		),
 				
@@ -189,6 +196,15 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Image_Size') ) {
 	  $obj_ezc_add_image_size->ez_isnc($arr_args);	  
 	  
     } 
+	
+	public function ezbs_picturefill_sizes(){
+	
+		$arr_pf_sizes = array(
+		
+		);
+		return $arr_pf_sizes;
+	}
+	
   }
 }
 
