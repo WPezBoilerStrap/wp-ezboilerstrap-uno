@@ -29,7 +29,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_title_above = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_title_above['active']) ){
+if ( WPezHelpers::ez_true($arr_title_above['active']) ){
   /**
    * In Admin > Appearance > Widgets, has a widget been placed in the defined dynamic sidebar && is the bool status === true
    */

@@ -27,19 +27,19 @@ if ( !defined('ABSPATH') ) {
 
 $arr_footer_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_footer_parent['active']) ){	
+if ( WPezHelpers::ez_true($arr_footer_parent['active']) ){	
 	
   echo '<footer>';
 
-  WP_ezMethods::ez_gtp( $arr_footer_parent['tp']['footer_above']['slug'], $arr_footer_parent['tp']['footer_above']['name'], $arr_footer_parent['tp']['footer_above']['active'] );
+  WPezHelpers::ez_gtp( $arr_footer_parent['tp']['footer_above']['slug'], $arr_footer_parent['tp']['footer_above']['name'], $arr_footer_parent['tp']['footer_above']['active'] );
 	
-  WP_ezMethods::ez_gtp( $arr_footer_parent['tp']['menu_footer']['slug'], $arr_footer_parent['tp']['menu_footer']['name'], $arr_footer_parent['tp']['menu_footer']['active'] );
+  WPezHelpers::ez_gtp( $arr_footer_parent['tp']['menu_footer']['slug'], $arr_footer_parent['tp']['menu_footer']['name'], $arr_footer_parent['tp']['menu_footer']['active'] );
 	
-  WP_ezMethods::ez_gtp( $arr_footer_parent['tp']['footer_main']['slug'], $arr_footer_parent['tp']['footer_main']['name'], $arr_footer_parent['tp']['footer_main']['active'] );
+  WPezHelpers::ez_gtp( $arr_footer_parent['tp']['footer_main']['slug'], $arr_footer_parent['tp']['footer_main']['name'], $arr_footer_parent['tp']['footer_main']['active'] );
 
-  WP_ezMethods::ez_gtp( $arr_footer_parent['tp']['footer_below']['slug'], $arr_footer_parent['tp']['footer_below']['name'], $arr_footer_parent['tp']['footer_below']['active'] );
+  WPezHelpers::ez_gtp( $arr_footer_parent['tp']['footer_below']['slug'], $arr_footer_parent['tp']['footer_below']['name'], $arr_footer_parent['tp']['footer_below']['active'] );
 			
-  WP_ezMethods::ez_gtp( $arr_footer_parent['tp']['footer_bottom']['slug'], $arr_footer_parent['tp']['footer_bottom']['name'], $arr_footer_parent['tp']['footer_bottom']['active'] );
+  WPezHelpers::ez_gtp( $arr_footer_parent['tp']['footer_bottom']['slug'], $arr_footer_parent['tp']['footer_bottom']['name'], $arr_footer_parent['tp']['footer_bottom']['active'] );
 		
   echo '</footer>';
 }

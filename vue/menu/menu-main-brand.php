@@ -29,7 +29,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_menu_main_brand = ezbsModl::get( basename(__FILE__, '.php') ); 
 	
-if ( WP_ezMethods::ez_true($arr_menu_main_brand['active']) ){	
+if ( WPezHelpers::ez_true($arr_menu_main_brand['active']) ){	
 
   echo '<span id="' . sanitize_text_field($arr_menu_main_brand['markup']['wrap_id']) . '" class="' . sanitize_text_field($arr_menu_main_brand['markup']['wrap_class']) . ' wp-ezbs-menu-class-brand wp-ezbs-menu-class-brand-global' . '">';
 

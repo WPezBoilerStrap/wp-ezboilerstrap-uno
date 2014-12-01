@@ -33,9 +33,9 @@ get_header();
 
 $arr_404 = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_404['active']) ){
+if ( WPezHelpers::ez_true($arr_404['active']) ){
 
-  WP_ezMethods::ez_gtp( $arr_404['tp']['404_parent']['slug'], $arr_404['tp']['404_parent']['name'], $arr_404['tp']['404_parent']['active'] );
+  WPezHelpers::ez_gtp( $arr_404['tp']['404_parent']['slug'], $arr_404['tp']['404_parent']['name'], $arr_404['tp']['404_parent']['active'] );
 }
 
 get_footer();

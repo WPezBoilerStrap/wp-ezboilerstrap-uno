@@ -77,17 +77,14 @@ if (! class_exists('Class_WP_ezBoilerStrap_Globals')) {
 	static public $str_oth_name					= '';
 	static public $bool_oth						= true;	
 
-	
-
-	
 	/**
-	 * Note: We're not using the construct other than to get "global" properties defined in the master parent
+	 *
 	 */
 	protected function __construct(){
 	  parent::__construct(); 
 	}
 		
-	public function ezc_init(){
+	public function ez__construct(){
 			//$this->ezbs_globals_init();
 	}
 		

@@ -29,7 +29,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_archive_header = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WP_ezMethods::ez_true($arr_archive_header['active']) ){
+if ( WPezHelpers::ez_true($arr_archive_header['active']) ){
 
   echo '<section>';
     echo '<div class="' . sanitize_text_field($arr_archive_header['markup']['wrap_class']) . '">';
@@ -38,7 +38,7 @@ if ( WP_ezMethods::ez_true($arr_archive_header['active']) ){
 	    echo sanitize_text_field($arr_archive_header['markup']['title']);
 	  echo '</' . sanitize_text_field($arr_archive_header['markup']['title_tag']) .  '>';
 
-      if ( WP_ezMethods::ez_true($arr_archive_header['markup']['description_active']) ){
+      if ( WPezHelpers::ez_true($arr_archive_header['markup']['description_active']) ){
 	
         echo '<div class="' . sanitize_text_field($arr_archive_header['markup']['description_class']) . ' wp-ezbs-archive-description' . '">';
 		  echo sanitize_text_field($arr_archive_header['markup']['description']);

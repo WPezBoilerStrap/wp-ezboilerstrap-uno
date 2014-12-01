@@ -33,9 +33,9 @@ get_header();
 
 $arr_search = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_search['active']) ){
+if ( WPezHelpers::ez_true($arr_search['active']) ){
 
-  WP_ezMethods::ez_gtp( $arr_search['tp']['search_parent']['slug'], $arr_search['tp']['search_parent']['name'], $arr_search['tp']['search_parent']['active'] );
+  WPezHelpers::ez_gtp( $arr_search['tp']['search_parent']['slug'], $arr_search['tp']['search_parent']['name'], $arr_search['tp']['search_parent']['active'] );
 
 }
 

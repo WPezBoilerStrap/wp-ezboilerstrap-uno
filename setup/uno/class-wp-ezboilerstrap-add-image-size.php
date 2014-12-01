@@ -179,7 +179,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Image_Size') ) {
 	 */
     public function ezbs_add_image_size(){
   
-      $obj_ezc_add_image_size = Class_WP_ezClasses_Theme_Add_Image_Size_1::ezc_get_instance();
+      $obj_ezc_add_image_size = Class_WP_ezClasses_Theme_Add_Image_Size_1::ez_new();
 	  
 	  // $obj_ezc_add_image_size->set_remove_width_height(false);
 	  

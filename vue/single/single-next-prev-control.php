@@ -30,7 +30,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_single_next_prev_control = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WP_ezMethods::ez_true($arr_single_next_prev_control['active']) ){
+if ( WPezHelpers::ez_true($arr_single_next_prev_control['active']) ){
 
   if ( ! empty($arr_single_next_prev_control['markup']['control']) ){
  

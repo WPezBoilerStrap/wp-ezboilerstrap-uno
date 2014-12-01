@@ -28,16 +28,16 @@ if ( !defined('ABSPATH') ) {
 
 $arr_header_parent = ezbsModl::get( basename(__FILE__, '.php') ); 	
 
-if ( WP_ezMethods::ez_true($arr_header_parent['active']) ) {
+if ( WPezHelpers::ez_true($arr_header_parent['active']) ) {
   
-  WP_ezMethods::ez_gtp( $arr_header_parent['tp']['header_above']['slug'], $arr_header_parent['tp']['header_above']['name'], $arr_header_parent['tp']['header_above']['active'] );
+  WPezHelpers::ez_gtp( $arr_header_parent['tp']['header_above']['slug'], $arr_header_parent['tp']['header_above']['name'], $arr_header_parent['tp']['header_above']['active'] );
 		
-  WP_ezMethods::ez_gtp( $arr_header_parent['tp']['menu_global']['slug'], $arr_header_parent['tp']['menu_global']['name'], $arr_header_parent['tp']['menu_global']['active'] );
+  WPezHelpers::ez_gtp( $arr_header_parent['tp']['menu_global']['slug'], $arr_header_parent['tp']['menu_global']['name'], $arr_header_parent['tp']['menu_global']['active'] );
   
-  WP_ezMethods::ez_gtp( $arr_header_parent['tp']['main_wrap']['slug'], $arr_header_parent['tp']['main_wrap']['name'], $arr_header_parent['tp']['main_wrap']['active'] );
+  WPezHelpers::ez_gtp( $arr_header_parent['tp']['main_wrap']['slug'], $arr_header_parent['tp']['main_wrap']['name'], $arr_header_parent['tp']['main_wrap']['active'] );
 
-  WP_ezMethods::ez_gtp( $arr_header_parent['tp']['menu_main']['slug'], $arr_header_parent['tp']['menu_main']['name'], $arr_header_parent['tp']['menu_main']['active'] );
+  WPezHelpers::ez_gtp( $arr_header_parent['tp']['menu_main']['slug'], $arr_header_parent['tp']['menu_main']['name'], $arr_header_parent['tp']['menu_main']['active'] );
 
-  WP_ezMethods::ez_gtp( $arr_header_parent['tp']['header_below']['slug'], $arr_header_parent['tp']['header_below']['name'], $arr_header_parent['tp']['header_below']['active'] );
+  WPezHelpers::ez_gtp( $arr_header_parent['tp']['header_below']['slug'], $arr_header_parent['tp']['header_below']['name'], $arr_header_parent['tp']['header_below']['active'] );
 
 }

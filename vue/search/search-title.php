@@ -30,7 +30,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_search_title = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WP_ezMethods::ez_true($arr_search_title['active']) ){
+if ( WPezHelpers::ez_true($arr_search_title['active']) ){
 
   // title
   echo '<' . sanitize_text_field($arr_search_title['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_search_title['markup']['title_class']) .  '">';

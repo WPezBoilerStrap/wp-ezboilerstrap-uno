@@ -28,13 +28,13 @@ if (!defined('ABSPATH')) {
 
 $arr_page_home_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_page_home_parent['active']) ){
+if ( WPezHelpers::ez_true($arr_page_home_parent['active']) ){
 
   echo '<div class="' . sanitize_text_field($arr_page_home_parent['markup']['wrap_class']) . '">';
     echo '<div class="' . sanitize_text_field($arr_page_home_parent['markup']['container_class']) .'">';
       echo '<div class="' . sanitize_text_field($arr_page_home_parent['markup']['row_class']) . '">';
 	  
-	    WP_ezMethods::ez_gtp( $arr_page_home_parent['tp']['aside_left']['slug'], $arr_page_home_parent['tp']['aside_left']['name'], $arr_page_home_parent['tp']['aside_left']['active'] );
+	    WPezHelpers::ez_gtp( $arr_page_home_parent['tp']['aside_left']['slug'], $arr_page_home_parent['tp']['aside_left']['name'], $arr_page_home_parent['tp']['aside_left']['active'] );
 		
 		  // TODO - make this a modl
 		  if ( have_posts() ) {
@@ -42,12 +42,12 @@ if ( WP_ezMethods::ez_true($arr_page_home_parent['active']) ){
 			
 			  the_post(); 
 		  
-		      WP_ezMethods::ez_gtp( $arr_page_home_parent['tp']['main']['slug'], $arr_page_home_parent['tp']['main']['name'], $arr_page_home_parent['tp']['main']['active'] );
+		      WPezHelpers::ez_gtp( $arr_page_home_parent['tp']['main']['slug'], $arr_page_home_parent['tp']['main']['name'], $arr_page_home_parent['tp']['main']['active'] );
 			
 			}
 		  } 
 		  
-		  WP_ezMethods::ez_gtp( $arr_page_home_parent['tp']['aside_right']['slug'], $arr_page_home_parent['tp']['aside_right']['name'], $arr_page_home_parent['tp']['aside_right']['active'] );
+		  WPezHelpers::ez_gtp( $arr_page_home_parent['tp']['aside_right']['slug'], $arr_page_home_parent['tp']['aside_right']['name'], $arr_page_home_parent['tp']['aside_right']['active'] );
 
 	  echo '</div>';
     echo '</div>'; 

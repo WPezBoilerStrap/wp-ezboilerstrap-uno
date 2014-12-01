@@ -28,7 +28,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_archive_content_below_above = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WP_ezMethods::ez_true($arr_archive_content_below_above['active']) ){
+if ( WPezHelpers::ez_true($arr_archive_content_below_above['active']) ){
 
   echo '<p>- - TODO: archive / ' . basename(__FILE__, '.php') . ' - - </p>';
 

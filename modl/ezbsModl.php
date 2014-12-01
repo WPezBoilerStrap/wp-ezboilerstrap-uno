@@ -74,7 +74,7 @@ if ( ! class_exists('ezbsModl')) {
 		   
 		     $arr_args = self::$str_modl_2();
 		  
-		    if ( WP_ezMethods::array_pass($arr_args) ){
+		    if ( WPezHelpers::ez_array_pass($arr_args) ){
 			
 			  return self::modl_filter( $str_modl_2, $arr_args);
 			} else{
@@ -90,6 +90,6 @@ if ( ! class_exists('ezbsModl')) {
 	} // end class
 }
 
-$ezbsModl = ezbsModl::ezc_get_instance();
+$ezbsModl = ezbsModl::ez_new();
 
 ?>

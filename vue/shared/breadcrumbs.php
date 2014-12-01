@@ -29,7 +29,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_breadcrumbs = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if (  WP_ezMethods::ez_true($arr_breadcrumbs['active']) ){
+if (  WPezHelpers::ez_true($arr_breadcrumbs['active']) ){
   
   echo '<div class="' . sanitize_text_field($arr_breadcrumbs['markup']['container_class'])  . '">';
     echo '<div class="' . sanitize_text_field($arr_breadcrumbs['markup']['row_class']) . '">';

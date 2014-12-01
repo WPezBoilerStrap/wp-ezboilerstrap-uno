@@ -33,9 +33,9 @@ get_header();
 
 $arr_single = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_single['active']) ){
+if ( WPezHelpers::ez_true($arr_single['active']) ){
 
-  WP_ezMethods::ez_gtp( $arr_single['tp']['single_parent']['slug'], $arr_single['tp']['single_parent']['name'], $arr_single['tp']['single_parent']['active'] );
+  WPezHelpers::ez_gtp( $arr_single['tp']['single_parent']['slug'], $arr_single['tp']['single_parent']['name'], $arr_single['tp']['single_parent']['active'] );
 
 }
 

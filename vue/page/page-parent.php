@@ -28,22 +28,22 @@ if (!defined('ABSPATH')) {
 
 $arr_page_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_page_parent['active']) ){
+if ( WPezHelpers::ez_true($arr_page_parent['active']) ){
 
   while ( have_posts() ) : the_post(); 
   
-    WP_ezMethods::ez_gtp( $arr_page_parent['tp']['breadcrumbs']['slug'], $arr_page_parent['tp']['breadcrumbs']['name'], $arr_page_parent['tp']['breadcrumbs']['active'] );
+    WPezHelpers::ez_gtp( $arr_page_parent['tp']['breadcrumbs']['slug'], $arr_page_parent['tp']['breadcrumbs']['name'], $arr_page_parent['tp']['breadcrumbs']['active'] );
 	
-	WP_ezMethods::ez_gtp( $arr_page_parent['tp']['content_above']['slug'], $arr_page_parent['tp']['content_above']['name'], $arr_page_parent['tp']['content_above']['active'] );
+	WPezHelpers::ez_gtp( $arr_page_parent['tp']['content_above']['slug'], $arr_page_parent['tp']['content_above']['name'], $arr_page_parent['tp']['content_above']['active'] );
 	
 	echo '<div class="' . sanitize_text_field($arr_page_parent['markup']['container']) . '">';
 	  echo '<div class="' . sanitize_text_field($arr_page_parent['markup']['row']) . '">';
 	  
-	    WP_ezMethods::ez_gtp( $arr_page_parent['tp']['aside_left']['slug'], $arr_page_parent['tp']['aside_left']['name'], $arr_page_parent['tp']['aside_left']['active'] );
+	    WPezHelpers::ez_gtp( $arr_page_parent['tp']['aside_left']['slug'], $arr_page_parent['tp']['aside_left']['name'], $arr_page_parent['tp']['aside_left']['active'] );
 		
-		WP_ezMethods::ez_gtp( $arr_page_parent['tp']['main']['slug'], $arr_page_parent['tp']['main']['name'], $arr_page_parent['tp']['main']['active'] );
+		WPezHelpers::ez_gtp( $arr_page_parent['tp']['main']['slug'], $arr_page_parent['tp']['main']['name'], $arr_page_parent['tp']['main']['active'] );
 		
-		WP_ezMethods::ez_gtp( $arr_page_parent['tp']['aside_right']['slug'], $arr_page_parent['tp']['aside_right']['name'], $arr_page_parent['tp']['aside_right']['active'] );
+		WPezHelpers::ez_gtp( $arr_page_parent['tp']['aside_right']['slug'], $arr_page_parent['tp']['aside_right']['name'], $arr_page_parent['tp']['aside_right']['active'] );
 					
       echo '</div>';
     echo '</div>';

@@ -151,7 +151,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
      */
     public function wp_enqueue_scripts(){
 	
-	  $obj_ezc_wp_enqueue = Class_WP_ezClasses_ezCore_WP_Enqueue::ezc_get_instance();
+	  $obj_ezc_wp_enqueue = Class_WP_ezClasses_ezCore_WP_Enqueue::ez_new();
 	  
 	  $arr_args['arr_args'] = $this->ezbs_wp_enqueue_args();
 	
@@ -167,7 +167,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
      */
     public function login_enqueue_scripts(){
   
-	  $obj_ezc_wp_enqueue = Class_WP_ezClasses_ezCore_WP_Enqueue::ezc_get_instance();
+	  $obj_ezc_wp_enqueue = Class_WP_ezClasses_ezCore_WP_Enqueue::ez_new();
   
       $arr_args['arr_args'] = $this->ezbs_wp_login_enqueue_args();
   
@@ -183,7 +183,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
      */
     public function admin_enqueue_scripts(){
     
-	  $obj_ezc_wp_enqueue = Class_WP_ezClasses_ezCore_WP_Enqueue::ezc_get_instance();
+	  $obj_ezc_wp_enqueue = Class_WP_ezClasses_ezCore_WP_Enqueue::ez_new();
   
       $arr_args['arr_args'] = $this->ezbs_wp_admin_enqueue_args();
   

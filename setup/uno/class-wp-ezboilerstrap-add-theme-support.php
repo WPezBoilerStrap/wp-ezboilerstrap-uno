@@ -191,7 +191,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Theme_Support') ) {
 	
 	  $arr_ats_args = $this->ezbs_add_theme_support_args();
 	  
-	  $obj_ezc_add_theme_support = Class_WP_ezClasses_Theme_Add_Theme_Support_1::ezc_get_instance();
+	  $obj_ezc_add_theme_support = Class_WP_ezClasses_Theme_Add_Theme_Support_1::ez_new();
 	  
 	  $obj_ezc_add_theme_support->ez_ats($arr_ats_args);
 	

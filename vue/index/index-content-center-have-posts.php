@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
 
 $arr_index_content_center_have_posts = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WP_ezMethods::ez_true($arr_index_content_center_have_posts['active']) ){
+if ( WPezHelpers::ez_true($arr_index_content_center_have_posts['active']) ){
 
   echo '<div class="' . sanitize_text_field($arr_index_content_center_have_posts['markup']['wrap_class']) . '">';
  ?> 
@@ -42,7 +42,7 @@ if ( WP_ezMethods::ez_true($arr_index_content_center_have_posts['active']) ){
 		</a>
 		<?php
 		
-		  WP_ezMethods::ez_gtp( $arr_index_content_center_have_posts['tp']['meta_above']['slug'], $arr_index_content_center_have_posts['tp']['meta_above']['name'], $arr_index_content_center_have_posts['tp']['meta_above']['active'] )
+		  WPezHelpers::ez_gtp( $arr_index_content_center_have_posts['tp']['meta_above']['slug'], $arr_index_content_center_have_posts['tp']['meta_above']['name'], $arr_index_content_center_have_posts['tp']['meta_above']['active'] )
 		?>
 		</p>
 		<?php 
@@ -70,7 +70,7 @@ if ( WP_ezMethods::ez_true($arr_index_content_center_have_posts['active']) ){
 
 		}
 		
-		WP_ezMethods::ez_gtp( $arr_index_content_center_have_posts['tp']['meta_below']['slug'], $arr_index_content_center_have_posts['tp']['meta_below']['name'], $arr_index_content_center_have_posts['tp']['meta_below']['active'] );
+		WPezHelpers::ez_gtp( $arr_index_content_center_have_posts['tp']['meta_below']['slug'], $arr_index_content_center_have_posts['tp']['meta_below']['name'], $arr_index_content_center_have_posts['tp']['meta_below']['active'] );
 	echo '</div>';
   echo '</div>';
 }

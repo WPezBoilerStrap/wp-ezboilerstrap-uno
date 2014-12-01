@@ -24,15 +24,15 @@
 <?php
 $arr_menu_main = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_menu_main['active']) ){	
+if ( WPezHelpers::ez_true($arr_menu_main['active']) ){	
 
 	echo '<div class="' . sanitize_text_field($arr_menu_main['markup']['wrap_class']) . '">';
 		echo '<div class="' . sanitize_text_field($arr_menu_main['markup']['navbar_class']) . '">';
 		  echo 	'<div class="' . sanitize_text_field($arr_menu_main['markup']['navbar_inner_class']) . '">';
 				  			
-				WP_ezMethods::ez_gtp( $arr_menu_main['tp']['menu_main_brand']['slug'], $arr_menu_main['tp']['menu_main_brand']['name'], $arr_menu_main['tp']['menu_main_brand']['active'] );
+				WPezHelpers::ez_gtp( $arr_menu_main['tp']['menu_main_brand']['slug'], $arr_menu_main['tp']['menu_main_brand']['name'], $arr_menu_main['tp']['menu_main_brand']['active'] );
 
-                if ( WP_ezMethods::array_pass($arr_menu_main['menu_args'])  && WP_ezMethods::ez_true($arr_menu_main['menu_args']['active']) ){
+                if ( WPezHelpers::ez_array_pass($arr_menu_main['menu_args'])  && WPezHelpers::ez_true($arr_menu_main['menu_args']['active']) ){
 				
 				  $str_wp_nav_menu = wp_nav_menu( $arr_menu_main['menu_args'] );
 				 

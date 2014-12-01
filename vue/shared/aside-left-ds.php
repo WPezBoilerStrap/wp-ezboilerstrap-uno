@@ -25,14 +25,14 @@
 
 $arr_aside_left_ds = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if( WP_ezMethods::ez_true($arr_aside_left_ds['active']) )  {  
+if( WPezHelpers::ez_true($arr_aside_left_ds['active']) )  {  
 
   foreach ( $arr_aside_left_ds['ds'] as $str_key => $arr_value){
 		
-    if ( WP_ezMethods::ez_ias( $arr_aside_left_ds['ds'][$str_key]['index'], $arr_aside_left_ds['ds'][$str_key]['active']) ) {
+    if ( WPezHelpers::ez_ias( $arr_aside_left_ds['ds'][$str_key]['index'], $arr_aside_left_ds['ds'][$str_key]['active']) ) {
 	
       echo '<div class="' . sanitize_text_field($arr_footer_below['ds'][$str_key]['markup']['class']) . ' wp-ezbs-header-above' . '">';
-	    WP_ezMethods::ez_ds($arr_aside_left_ds['ds'][$str_key]['index'], $arr_aside_left_ds['ds'][$str_key]['active'] );
+	    WPezHelpers::ez_ds($arr_aside_left_ds['ds'][$str_key]['index'], $arr_aside_left_ds['ds'][$str_key]['active'] );
 	  echo '</div>';
     }		
   }

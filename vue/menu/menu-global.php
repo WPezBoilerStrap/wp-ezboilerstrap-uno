@@ -22,13 +22,13 @@
 
 $arr_menu_global = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_menu_global['active']) ){	
+if ( WPezHelpers::ez_true($arr_menu_global['active']) ){	
 
 	echo '<div class="' . sanitize_text_field($arr_menu_global['markup']['wrap_class']) . '">';
 	  echo '<div class="' . sanitize_text_field($arr_menu_global['markup']['class_container']) . '">';
 		echo '<div class="' . sanitize_text_field($arr_menu_global['markup']['navbar_class']) . '">';
 		
-		  if ( WP_ezMethods::array_pass($arr_menu_global['menu_args'])  && WP_ezMethods::ez_true($arr_menu_global['menu_args']['active']) ){ 
+		  if ( WPezHelpers::ez_array_pass($arr_menu_global['menu_args'])  && WPezHelpers::ez_true($arr_menu_global['menu_args']['active']) ){ 
 		  
 		    $str_wp_nav_menu = wp_nav_menu( $arr_menu_global['menu_args'] );
 			
@@ -42,12 +42,12 @@ if ( WP_ezMethods::ez_true($arr_menu_global['active']) ){
 			  </button>
 			<?php
 			}
-			WP_ezMethods::ez_gtp( $arr_menu_global['tp']['menu_global_brand']['slug'], $arr_menu_global['tp']['menu_global_brand']['name'], $arr_menu_global['tp']['menu_global_brand']['active'] );
+			WPezHelpers::ez_gtp( $arr_menu_global['tp']['menu_global_brand']['slug'], $arr_menu_global['tp']['menu_global_brand']['name'], $arr_menu_global['tp']['menu_global_brand']['active'] );
 		  }
 		
 		echo '</div>';// <!-- / .navbar navbar-inverse navbar-relative-top -->
 		  
-		  if ( WP_ezMethods::array_pass($arr_menu_global['menu_args'])  && WP_ezMethods::ez_true($arr_menu_global['menu_args']['active']) ){ 
+		  if ( WPezHelpers::ez_array_pass($arr_menu_global['menu_args'])  && WPezHelpers::ez_true($arr_menu_global['menu_args']['active']) ){ 
 		    if ( ! empty ($str_wp_nav_menu) ){
 			  echo $str_wp_nav_menu;
 			}

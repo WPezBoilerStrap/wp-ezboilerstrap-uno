@@ -24,34 +24,34 @@
 
 $arr_index_parent = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WP_ezMethods::ez_true($arr_index_parent['active']) ){
+if ( WPezHelpers::ez_true($arr_index_parent['active']) ){
 
-  WP_ezMethods::ez_gtp( $arr_index_parent['tp']['breadcrumbs']['slug'], $arr_index_parent['tp']['breadcrumbs']['name'], $arr_index_parent['tp']['breadcrumbs']['active'] );
+  WPezHelpers::ez_gtp( $arr_index_parent['tp']['breadcrumbs']['slug'], $arr_index_parent['tp']['breadcrumbs']['name'], $arr_index_parent['tp']['breadcrumbs']['active'] );
   
   /**
    * Mainly for Archive for in theory for an speciality use case
    */
-  WP_ezMethods::ez_gtp( $arr_index_parent['tp']['content_above_above']['slug'], $arr_index_parent['tp']['content_above_above']['name'], $arr_index_parent['tp']['content_above_above']['active'] );
+  WPezHelpers::ez_gtp( $arr_index_parent['tp']['content_above_above']['slug'], $arr_index_parent['tp']['content_above_above']['name'], $arr_index_parent['tp']['content_above_above']['active'] );
 
   /**
    * This is the standard content_above
    */
-  WP_ezMethods::ez_gtp( $arr_index_parent['tp']['content_above']['slug'], $arr_index_parent['tp']['content_above']['name'], $arr_index_parent['tp']['content_above']['active'] );
+  WPezHelpers::ez_gtp( $arr_index_parent['tp']['content_above']['slug'], $arr_index_parent['tp']['content_above']['name'], $arr_index_parent['tp']['content_above']['active'] );
   
   /**
    * Mainly for Archive for in theory for an speciality use case
    */
-  WP_ezMethods::ez_gtp( $arr_index_parent['tp']['content_above_below']['slug'], $arr_index_parent['tp']['content_above_below']['name'], $arr_index_parent['tp']['content_above_below']['active'] );
+  WPezHelpers::ez_gtp( $arr_index_parent['tp']['content_above_below']['slug'], $arr_index_parent['tp']['content_above_below']['name'], $arr_index_parent['tp']['content_above_below']['active'] );
 
 
   echo '<div class="' . sanitize_text_field($arr_index_parent['markup']['container_class']) . '">';
     echo '<div class="' . sanitize_text_field($arr_index_parent['markup']['row_class']) . '">';
 
-    WP_ezMethods::ez_gtp( $arr_index_parent['tp']['aside_left']['slug'], $arr_index_parent['tp']['aside_left']['name'], $arr_index_parent['tp']['aside_left']['active'] );
+    WPezHelpers::ez_gtp( $arr_index_parent['tp']['aside_left']['slug'], $arr_index_parent['tp']['aside_left']['name'], $arr_index_parent['tp']['aside_left']['active'] );
 
-    WP_ezMethods::ez_gtp( $arr_index_parent['tp']['main']['slug'], $arr_index_parent['tp']['main']['name'], $arr_index_parent['tp']['main']['active'] );
+    WPezHelpers::ez_gtp( $arr_index_parent['tp']['main']['slug'], $arr_index_parent['tp']['main']['name'], $arr_index_parent['tp']['main']['active'] );
 
-    WP_ezMethods::ez_gtp( $arr_index_parent['tp']['aside_right']['slug'], $arr_index_parent['tp']['aside_right']['name'], $arr_index_parent['tp']['aside_right']['active'] );
+    WPezHelpers::ez_gtp( $arr_index_parent['tp']['aside_right']['slug'], $arr_index_parent['tp']['aside_right']['name'], $arr_index_parent['tp']['aside_right']['active'] );
 			
     echo '</div>';
   echo '</div>';

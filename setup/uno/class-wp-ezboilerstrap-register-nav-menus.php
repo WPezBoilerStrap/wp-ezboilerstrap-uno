@@ -29,7 +29,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_Register_Nav_Menus') ) {
 	
 	public function ezbs_register_nav_menus(){
 	
-	  $obj_ezc_register_nav_menus = Class_WP_ezClasses_Theme_Register_Nav_Menus_1::ezc_get_instance();
+	  $obj_ezc_register_nav_menus = Class_WP_ezClasses_Theme_Register_Nav_Menus_1::ez_new();
 	  
 	  $arr_args['arr_args'] = $this->ezbs_register_nav_menus_args();
 	  $obj_ezc_register_nav_menus->ez_rnm($arr_args);

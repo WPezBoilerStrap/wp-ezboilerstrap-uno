@@ -11,7 +11,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_Register_Sidebar') ) {
 	
 	  return array (
         'active'			=> true,  	// ezBS do not use this, but you certainly could
-	    'description'   	=> 'WP ezBoilerStrap Default Description',
+	    'description'   	=> 'WPezBoilerStrap Default Description',
 		'before_widget'		=> '<div id="WP-EZC-WIDGET-ID" class="wp-ezbs-widget WP-EZC-WIDGET-CLASS">', 
 		'after_widget'		=> '</div>',
 		'before_title'		=> '<div class="wp-ezbs-widget-title">',
@@ -381,7 +381,7 @@ if (! class_exists('Class_WP_ezBoilerStrap_Register_Sidebar') ) {
 
     public function ezbs_register_sizebar(){
   
-      $obj_ezc_register_sizebar = Class_WP_ezClasses_Theme_Register_Sidebar_1::ezc_get_instance();
+      $obj_ezc_register_sizebar = Class_WP_ezClasses_Theme_Register_Sidebar_1::ez_new();
   
       $arr_args = array(
         'base'	 	 => $this->ezbs_register_sidebar_base(),

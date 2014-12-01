@@ -28,7 +28,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_page_content_center = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_page_content_center['active']) ){
+if ( WPezHelpers::ez_true($arr_page_content_center['active']) ){
 
   echo '<header>';
     echo '<' . sanitize_text_field($arr_page_content_center['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_page_content_center['markup']['title_class']) . ' wp-ezbs-page-title-class wp-ezbs-title-class' . '">';
@@ -38,7 +38,7 @@ if ( WP_ezMethods::ez_true($arr_page_content_center['active']) ){
 	echo '</' . sanitize_text_field($arr_page_content_center['markup']['title_tag']) . '>';
   echo '</header>';
 
-  WP_ezMethods::ez_gtp( $arr_page_content_center['tp']['title_below']['slug'], $arr_page_content_center['tp']['title_below']['name'], $arr_page_content_center['tp']['title_below']['active'] );
+  WPezHelpers::ez_gtp( $arr_page_content_center['tp']['title_below']['slug'], $arr_page_content_center['tp']['title_below']['name'], $arr_page_content_center['tp']['title_below']['active'] );
 
   echo '<span class="' . sanitize_text_field($arr_page_content_center['markup']['content_class']) . 'wp-ezbs-the-content wp-ezbs-page-the-content">';
   /**

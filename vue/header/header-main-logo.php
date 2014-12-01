@@ -27,7 +27,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_header_main_logo = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_header_main_logo['active']) ){
+if ( WPezHelpers::ez_true($arr_header_main_logo['active']) ){
 
 echo '<div class="' . sanitize_text_field($arr_header_main_logo['markup']['left_class']) . '">';
   echo '<a class="' . sanitize_text_field($arr_header_main_logo['markup']['link_class_left']) . '" href="' . home_url( '/' ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';

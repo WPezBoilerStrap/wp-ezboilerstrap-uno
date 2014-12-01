@@ -30,7 +30,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_header_main_logo_no = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_header_main_logo_no['active']) ){
+if ( WPezHelpers::ez_true($arr_header_main_logo_no['active']) ){
 
 ?>
 

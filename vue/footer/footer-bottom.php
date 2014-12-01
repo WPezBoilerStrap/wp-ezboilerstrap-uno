@@ -23,7 +23,7 @@
  
 $arr_footer_bottom = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_footer_bottom['active']) ){
+if ( WPezHelpers::ez_true($arr_footer_bottom['active']) ){
 
   echo '<div class="' . sanitize_text_field($arr_footer_bottom['markup']['container_class']) . '">';
     echo '<p class="' . sanitize_text_field($arr_footer_bottom['markup']['left_class']) . '">' . sanitize_text_field($arr_footer_bottom['markup']['left_text']). '</p>';

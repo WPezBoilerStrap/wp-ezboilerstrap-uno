@@ -27,17 +27,17 @@ if ( !defined('ABSPATH') ) {
 
 $arr_single_content_center = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_single_content_center['active']) ){	
+if ( WPezHelpers::ez_true($arr_single_content_center['active']) ){	
 
   echo '<div class="' . sanitize_text_field($arr_single_content_center['markup']['wrap_class']) . ' wp-ezbs-column-center' . '">';
   
-    WP_ezMethods::ez_gtp( $arr_single_content_center['tp']['title_above']['slug'], $arr_single_content_center['tp']['title_above']['name'], $arr_single_content_center['tp']['title_above']['active'] );
+    WPezHelpers::ez_gtp( $arr_single_content_center['tp']['title_above']['slug'], $arr_single_content_center['tp']['title_above']['name'], $arr_single_content_center['tp']['title_above']['active'] );
 
     echo '<' . sanitize_text_field($arr_single_content_center['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_single_content_center['markup']['title_class']) . '">';
       echo get_the_title();
     echo '</' . sanitize_text_field($arr_single_content_center['markup']['title_tag']) . '>';
 
-    WP_ezMethods::ez_gtp( $arr_single_content_center['tp']['title_below']['slug'], $arr_single_content_center['tp']['title_below']['name'], $arr_single_content_center['tp']['title_below']['active'] );
+    WPezHelpers::ez_gtp( $arr_single_content_center['tp']['title_below']['slug'], $arr_single_content_center['tp']['title_below']['name'], $arr_single_content_center['tp']['title_below']['active'] );
 
     /**
      * FYI: echo get_the_content(); -  mucked with some shortcodes so we'll go with the_content()
@@ -47,9 +47,9 @@ if ( WP_ezMethods::ez_true($arr_single_content_center['active']) ){
      echo '<h4>TODO - Meta + tags and categories</h4>';
      echo '<h4>TODO - Comments</h4>';
 
-     WP_ezMethods::ez_gtp( $arr_single_content_center['tp']['single_next_prev']['slug'], $arr_single_content_center['tp']['single_next_prev']['name'], $arr_single_content_center['tp']['single_next_prev']['active'] );
+     WPezHelpers::ez_gtp( $arr_single_content_center['tp']['single_next_prev']['slug'], $arr_single_content_center['tp']['single_next_prev']['name'], $arr_single_content_center['tp']['single_next_prev']['active'] );
 
-     WP_ezMethods::ez_gtp( $arr_single_content_center['tp']['content_below']['slug'], $arr_single_content_center['tp']['content_below']['name'], $arr_single_content_center['tp']['content_below']['active'] );
+     WPezHelpers::ez_gtp( $arr_single_content_center['tp']['content_below']['slug'], $arr_single_content_center['tp']['content_below']['name'], $arr_single_content_center['tp']['content_below']['active'] );
 
     echo '</div>';
 }

@@ -26,17 +26,17 @@ if ( !defined('ABSPATH') ) {
 
 $arr_404_content_center_wrap = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_404_content_center_wrap['active']) ){
+if ( WPezHelpers::ez_true($arr_404_content_center_wrap['active']) ){
 
   echo '<div class="' . sanitize_text_field($arr_404_content_center_wrap['markup']['class']) . ' wp-ezbs-content-center-wrap">';
 
-    WP_ezMethods::ez_gtp( $arr_404_content_center_wrap['tp']['title_above']['slug'], $arr_404_content_center_wrap['tp']['title_above']['name'], $arr_404_content_center_wrap['tp']['title_above']['active'] );
+    WPezHelpers::ez_gtp( $arr_404_content_center_wrap['tp']['title_above']['slug'], $arr_404_content_center_wrap['tp']['title_above']['name'], $arr_404_content_center_wrap['tp']['title_above']['active'] );
 
-	WP_ezMethods::ez_gtp( $arr_404_content_center_wrap['tp']['main']['slug'], $arr_404_content_center_wrap['tp']['main']['name'], $arr_404_content_center_wrap['tp']['main']['active'] );
+	WPezHelpers::ez_gtp( $arr_404_content_center_wrap['tp']['main']['slug'], $arr_404_content_center_wrap['tp']['main']['name'], $arr_404_content_center_wrap['tp']['main']['active'] );
 		
-	WP_ezMethods::ez_gtp( $arr_404_content_center_wrap['tp']['title_below']['slug'], $arr_404_content_center_wrap['tp']['title_below']['name'], $arr_404_content_center_wrap['tp']['title_below']['active'] );
+	WPezHelpers::ez_gtp( $arr_404_content_center_wrap['tp']['title_below']['slug'], $arr_404_content_center_wrap['tp']['title_below']['name'], $arr_404_content_center_wrap['tp']['title_below']['active'] );
 	
-	WP_ezMethods::ez_gtp( $arr_404_content_center_wrap['tp']['content_below']['slug'], $arr_404_content_center_wrap['tp']['content_below']['name'], $arr_404_content_center_wrap['tp']['content_below']['active'] );
+	WPezHelpers::ez_gtp( $arr_404_content_center_wrap['tp']['content_below']['slug'], $arr_404_content_center_wrap['tp']['content_below']['name'], $arr_404_content_center_wrap['tp']['content_below']['active'] );
 
   echo '</div> <!-- / .span# -->';
 }

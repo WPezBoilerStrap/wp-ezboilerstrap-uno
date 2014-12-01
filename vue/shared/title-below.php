@@ -29,11 +29,11 @@ if ( !defined('ABSPATH') ) {
 
 $arr_title_below = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WP_ezMethods::ez_true($arr_title_below['active']) ){
+if ( WPezHelpers::ez_true($arr_title_below['active']) ){
 
   foreach ( $arr_title_below['ds'] as $str_key => $arr_value){
 	
-    if ( WP_ezMethods::ez_ias( $arr_title_below['ds'][$str_key]['index'], $arr_title_below['ds'][$str_key]['active']) ) {
+    if ( WPezHelpers::ez_ias( $arr_title_below['ds'][$str_key]['index'], $arr_title_below['ds'][$str_key]['active']) ) {
 	
       echo '<section>';
         echo '<div class="' . anitize_text_field($arr_title_below['ds'][$str_key]['markup']['class']) . ' wp-ezbs-content-above' . '">';

@@ -29,7 +29,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_index_sort_control = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WP_ezMethods::ez_true($arr_index_sort_control['active']) ){
+if ( WPezHelpers::ez_true($arr_index_sort_control['active']) ){
 
   if ( ! empty($arr_index_sort_control['markup']['control']) && is_string($arr_index_sort_control['markup']['control']) ){
  

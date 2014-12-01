@@ -40,15 +40,15 @@ $arr_header = ezbsModl::get( basename(__FILE__, '.php') );
 <head>
 <?php
 
-WP_ezMethods::ez_gtp( $arr_header['tp']['head']['slug'], $arr_header['tp']['head']['name'], $arr_header['tp']['head']['active'] );
+WPezHelpers::ez_gtp( $arr_header['tp']['head']['slug'], $arr_header['tp']['head']['name'], $arr_header['tp']['head']['active'] );
 
 wp_head();
 
-WP_ezMethods::ez_gtp( $arr_header['tp']['before_head_tag_close']['slug'], $arr_header['tp']['before_head_tag_close']['name'], $arr_header['tp']['before_head_tag_close']['active'] );
+WPezHelpers::ez_gtp( $arr_header['tp']['before_head_tag_close']['slug'], $arr_header['tp']['before_head_tag_close']['name'], $arr_header['tp']['before_head_tag_close']['active'] );
 ?>
 </head>
 <body <?php body_class(); ?>  data-spy="<?php echo sanitize_text_field($arr_header['markup']['data_spy'])?>" data-target="<?php echo sanitize_text_field($arr_header['markup']['data_target'])?>" data-offset="<?php echo sanitize_text_field($arr_header['markup']['data_offset'])?>">
 
 <?php
 
-WP_ezMethods::ez_gtp( $arr_header['tp']['header_parent']['slug'], $arr_header['tp']['header_parent']['name'], $arr_header['tp']['header_parent']['active'] );
+WPezHelpers::ez_gtp( $arr_header['tp']['header_parent']['slug'], $arr_header['tp']['header_parent']['name'], $arr_header['tp']['header_parent']['active'] );
