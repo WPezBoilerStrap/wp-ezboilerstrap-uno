@@ -51,15 +51,22 @@ if (! class_exists('Class_WP_ezBoilerStrap_Add_Theme_Support') ) {
 		 * http://codex.wordpress.org/Post_Thumbnails
 		 */
 		 
+		 /**
+		  * re: 'args'
+		  *
+		  * if we specify which post_types to support then it will only support those post_types. this
+		  * also means that custom CPTs might get mucked up
+		  */
+		 
 		'post_thumbnails' => array(
 		  'active'				=> true,
 		  'feature'				=> 'post-thumbnails',
 		  'args_type'			=> 'active_bool',   // 'value_pairs', 'active_bool', 'none'			
 		  'args' => array(
-		    'post'			=> true,
-			'page'			=> true,
-			'custom_cpt_1'	=> false,
-			'custom_cpt_2'	=> false,
+		//  'post'			=> true,
+		//	'page'			=> true,
+		//	'custom_cpt_1'	=> false,
+		//	'custom_cpt_2'	=> false,
 			),
 		  ),
 		 
