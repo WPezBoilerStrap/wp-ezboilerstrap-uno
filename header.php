@@ -47,7 +47,13 @@ wp_head();
 WPezHelpers::ez_gtp( $arr_header['tp']['before_head_tag_close']['slug'], $arr_header['tp']['before_head_tag_close']['name'], $arr_header['tp']['before_head_tag_close']['active'] );
 ?>
 </head>
-<body <?php body_class(); ?>  data-spy="<?php echo sanitize_text_field($arr_header['markup']['data_spy'])?>" data-target="<?php echo sanitize_text_field($arr_header['markup']['data_target'])?>" data-offset="<?php echo sanitize_text_field($arr_header['markup']['data_offset'])?>">
+<?php
+  $str_body_inline = '';
+  if ( isset($arr_header['markup']['body_inline']) ){
+    $str_body_inline = WPezHelpers::ez_pairs_to_string($arr_header['markup']['body_inline']);
+  }
+?>
+<body <?php body_class(); echo ' ' . $str_body_inline; ?>>
 
 <?php
 

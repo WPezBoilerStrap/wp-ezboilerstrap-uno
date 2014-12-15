@@ -46,7 +46,7 @@ if ( ! class_exists('ezbsModl')) {
     parent::__construct();
   } 
 		
-  public function ez__construct()($obj_ezbs_options = NULL){
+  public function ez__construct(){
   }
 		
 		/**
