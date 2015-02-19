@@ -36,7 +36,8 @@ if ( WPezHelpers::ez_true($arr_footer_above['active']) ){
     if ( WPezHelpers::ez_ias( $arr_footer_above['ds'][$str_key]['index'], $arr_footer_above['ds'][$str_key]['active']) ) {
   
       echo '<div class="' . sanitize_text_field($arr_footer_above['ds'][$str_key]['markup']['class']) . ' wp-ezbs-header-above' . '">';
-	    WPezHelpers::ez_ds($arr_footer_above['ds'][$str_key]['index'], $arr_footer_above['ds'][$str_key]['active'] );
+	  
+		WPezHelpers::ez_ds($arr_footer_above['ds'][$str_key]['index'], $arr_footer_above['ds'][$str_key]['active'] );
 	  echo '</div>';
     }
   }
