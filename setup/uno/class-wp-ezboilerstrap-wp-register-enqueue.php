@@ -30,46 +30,18 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
 		//	'in_footer'			=>	NULL,	// in_footer is required for type: script - both are listed for consistency / convenience
 		),
 		
-	    'bootstrap_css' => array(
-			'active'			=> true,
-			'host'				=> 'maxcdn',					// for internal use
+	    'jquery' 		=> array(
+			'active'			=> true, 
+			'host'				=> 'wp local',					// for internal use
 			'note'				=> 'TODO',						// for internal use
 			'conditional_tags'	=> array(),
-			'type'				=> 'style',
-			'handle'			=> 'bootstrap_css',
-			'src'				=> '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css',
+			'type'				=> 'wp-script',
+			'handle'			=> 'jquery',
+			'src'				=> 'n/a',
 			'deps'				=> array(),
-			'ver'				=> 'maxcdn3.2.0',
-			'media'				=> 'all',	// media is required for type: style
-		//	'in_footer'			=>	NULL,	// in_footer is required for type: script - both are listed for consistency / convenience
-		),
-		
-	    'jquery_cnd' => array(
-			'active'			=> false,
-			'host'				=> 'google',					// for internal use
-			'note'				=> 'TODO',						// for internal use
-			'conditional_tags'	=> array(),
-			'type'				=> 'script',
-			'handle'			=> 'jquery_cdn',
-			'src'				=> '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-			'deps'				=> array(),
-			'ver'				=> 'google_2.1.1',
+			'ver'				=> 'n/a',
 		//	'media'				=> 'all',	// media is required for type: style
-			'in_footer'			=>	true,	// in_footer is required for type: script - both are listed for consistency / convenience
-		),
-		
-		'bootstrap_js' => array(	
-			'active'			=> true,
-			'host'				=> 'maxcdn',					// for internal use
-			'note'				=> 'TODO',						// for internal use
-			'conditional_tags'	=> array(), // example of only load on the 404: array('tags' => array('is_404' => true)),
-			'type'				=> 'script',
-			'handle'			=> 'bootstrap_js',
-			'src'				=> '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js',
-			'deps'				=> array('jquery_cdn'),
-			'ver'				=> 'maxcdn_3.2.0',
-		//	'media'				=> NULL,
-			'in_footer'			=> true,
+			'in_footer'			=> 'n/a',	// in_footer is required for type: script - both are listed for consistency / convenience
 		),
 		
 	    'font_awesome_css' => array(
@@ -86,9 +58,51 @@ if (! class_exists('Class_WP_ezBoilerStrap_WP_Register_Enqueue') ) {
 		//	'in_footer'			=>	NULL,	// in_footer is required for type: script - both are listed for consistency / convenience
 		),
 		
+	    'bootstrap_css' => array(
+			'active'			=> true,
+			'host'				=> 'maxcdn',					// for internal use
+			'note'				=> 'TODO',						// for internal use
+			'conditional_tags'	=> array(),
+			'type'				=> 'style',
+			'handle'			=> 'bootstrap_css',
+			'src'				=> '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css',
+			'deps'				=> array(),
+			'ver'				=> 'maxcdn3.2.0',
+			'media'				=> 'all',	// media is required for type: style
+		//	'in_footer'			=>	NULL,	// in_footer is required for type: script - both are listed for consistency / convenience
+		),
+		
+		'bootstrap_js' => array(	
+			'active'			=> true,
+			'host'				=> 'maxcdn',					// for internal use
+			'note'				=> 'TODO',						// for internal use
+			'conditional_tags'	=> array(), // example of only load on the 404: array('tags' => array('is_404' => true)),
+			'type'				=> 'script',
+			'handle'			=> 'bootstrap_js',
+			'src'				=> '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js',
+			'deps'				=> array('jquery'),
+			'ver'				=> 'maxcdn_3.2.0',
+		//	'media'				=> NULL,
+			'in_footer'			=> true,
+		),
+		
+	    'custom_css' => array(
+			'active'			=> true,
+			'host'				=> 'local',					// for internal use
+			'note'				=> 'TODO',						// for internal use
+			'conditional_tags'	=> array(),
+			'type'				=> 'style',
+			'handle'			=> 'custom_css',
+			'src'				=> get_stylesheet_directory_uri() . '/setup/assets/css/custom.css',
+			'deps'				=> array('bootstrap_css', 'fa_css'),
+			'ver'				=> 's_0.0.1',
+			'media'				=> 'all',	// media is required for type: style
+		//	'in_footer'			=>	NULL,	// in_footer is required for type: script - both are listed for consistency / convenience
+		),
+		
 		'wp_comment_reply' => array(	
 			'active'			=> true,
-			'host'				=> 'wp core',					// for internal use
+			'host'				=> 'wp local',					// for internal use
 			'note'				=> 'TODO',						// for internal use
 			'conditional_tags'	=> array(
 			  'tags' => array(
