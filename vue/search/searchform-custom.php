@@ -30,29 +30,29 @@ if ( !defined('ABSPATH') ) {
 
 $arr_searchform_custom = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_searchform_custom['active']) ){
+if ( WPezHelpers::ez_true($arr_searchform_custom, 'active') ){
 
   global $wp_query;
 
   $str_to_return = '';
 
-  $str_to_return .= '<form role="search" method="get" id="' . sanitize_text_field($arr_searchform_custom['markup']['form_id']) . '" action="' . sanitize_text_field($arr_searchform_custom['markup']['action']) .'">';
+  $str_to_return .= '<form role="search" method="get" id="' . esc_attr($arr_searchform_custom['markup']['form_id']) . '" action="' . esc_attr($arr_searchform_custom['markup']['action']) .'">';
   $str_to_return .= '<div>';
   
   if ( $arr_searchform_custom['markup']['label_bool'] === true ){
-    $str_to_return .= '<label class="' . sanitize_text_field($arr_searchform_custom['markup']['label_class']) . '" for="s">' . sanitize_text_field($arr_searchform_custom['markup']['label_value']) . '</label>';
+    $str_to_return .= '<label class="' . esc_attr($arr_searchform_custom['markup']['label_class']) . '" for="s">' . esc_attr($arr_searchform_custom['markup']['label_value']) . '</label>';
 
   }
   
   //  $search_query = get_search_query();
   
   if ( empty( $arr_searchform_custom['markup']['input_value']) ) {
-    $str_to_return .= '<input class="'. sanitize_text_field($arr_searchform_custom['markup']['empty_input_class']) . '" type="text" value="" name="s" id="' . sanitize_text_field($arr_searchform_custom['markup']['empty_input_id']) . '" placeholder="' . sanitize_text_field($arr_searchform_custom['markup']['empty_input_placeholder']) .'"/>';	
+    $str_to_return .= '<input class="'. esc_attr($arr_searchform_custom['markup']['empty_input_class']) . '" type="text" value="" name="s" id="' . esc_attr($arr_searchform_custom['markup']['empty_input_id']) . '" placeholder="' . esc_attr($arr_searchform_custom['markup']['empty_input_placeholder']) .'"/>';	
   } else {
-    $str_to_return .= '<input class="'. sanitize_text_field($arr_searchform_custom['markup']['input_class']) . '" type="text" name="s" id="' . sanitize_text_field($arr_searchform_custom['markup']['input_id']) . '" value="' . sanitize_text_field($arr_searchform_custom['markup']['input_value']).'"/>';			
+    $str_to_return .= '<input class="'. esc_attr($arr_searchform_custom['markup']['input_class']) . '" type="text" name="s" id="' . esc_attr($arr_searchform_custom['markup']['input_id']) . '" value="' . esc_attr($arr_searchform_custom['markup']['input_value']).'"/>';			
   }
   
-  $str_to_return .= '<button type="submit" id="' . sanitize_text_field($arr_searchform_custom['markup']['button_id']) . '" value="' . sanitize_text_field($arr_searchform_custom['markup']['button_value']) . '" class="' . sanitize_text_field($arr_searchform_custom['markup']['button_class']) . '"/>' . sanitize_text_field($arr_searchform_custom['markup']['button_value']) . '</button>';
+  $str_to_return .= '<button type="submit" id="' . esc_attr($arr_searchform_custom['markup']['button_id']) . '" value="' . esc_attr($arr_searchform_custom['markup']['button_value']) . '" class="' . esc_attr($arr_searchform_custom['markup']['button_class']) . '"/>' . esc_attr($arr_searchform_custom['markup']['button_value']) . '</button>';
   $str_to_return .= '</div>';
   $str_to_return .= '</form>';
 

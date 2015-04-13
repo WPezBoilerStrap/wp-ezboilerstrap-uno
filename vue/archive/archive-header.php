@@ -29,19 +29,19 @@ if ( !defined('ABSPATH') ) {
 
 $arr_archive_header = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WPezHelpers::ez_true($arr_archive_header['active']) ){
+if ( WPezHelpers::ez_true($arr_archive_header, 'active' ) ){
 
   echo '<section>';
-    echo '<div class="' . sanitize_text_field($arr_archive_header['markup']['wrap_class']) . '">';
+    echo '<div class="' . esc_attr($arr_archive_header['markup']['wrap_class']) . '">';
 	
-      echo '<' . sanitize_text_field($arr_archive_header['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_archive_header['markup']['title_class']) . ' wp-ezbs-archive-header' . '">';
-	    echo sanitize_text_field($arr_archive_header['markup']['title']);
-	  echo '</' . sanitize_text_field($arr_archive_header['markup']['title_tag']) .  '>';
+      echo '<' . esc_attr($arr_archive_header['markup']['title_tag']) . ' class="' . esc_attr($arr_archive_header['markup']['title_class']) . ' wp-ezbs-archive-header' . '">';
+	    echo esc_attr($arr_archive_header['markup']['title']);
+	  echo '</' . esc_attr($arr_archive_header['markup']['title_tag']) .  '>';
 
-      if ( WPezHelpers::ez_true($arr_archive_header['markup']['description_active']) ){
+      if ( WPezHelpers::ez_true($arr_archive_header, 'markup') && WPezHelpers::ez_true($arr_archive_header['markup'], 'description_active' ) ){
 	
-        echo '<div class="' . sanitize_text_field($arr_archive_header['markup']['description_class']) . ' wp-ezbs-archive-description' . '">';
-		  echo sanitize_text_field($arr_archive_header['markup']['description']);
+        echo '<div class="' . esc_attr($arr_archive_header['markup']['description_class']) . ' wp-ezbs-archive-description' . '">';
+		  echo esc_attr($arr_archive_header['markup']['description']);
 		echo '</div>';
       }
 	  

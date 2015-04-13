@@ -29,13 +29,13 @@ if ( !defined('ABSPATH') ) {
 
 $arr_title_above = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_title_above['active']) ){
+if ( WPezHelpers::ez_true($arr_title_above, 'active') ){
   /**
    * In Admin > Appearance > Widgets, has a widget been placed in the defined dynamic sidebar && is the bool status === true
    */
   if ( is_active_sidebar($arr_title_above['ds']['one']['index']) && $arr_title_above['ds']['one']['active'] !== false ) {
   
-    echo '<div class="' . $arr_title_above['ds']['one']['markup']['class'] . ' wp-ezbs-title-above' . '">';
+    echo '<div class="' . esc_attr($arr_title_above['ds']['one']['markup']['class']) . ' wp-ezbs-title-above' . '">';
 	  dynamic_sidebar($arr_title_above['ds']['one']['index']);
 	echo '</div>';
   }

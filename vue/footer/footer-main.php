@@ -28,13 +28,13 @@ if ( !defined('ABSPATH') ) {
 
 $arr_footer_main = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_footer_main['active']) ){
+if ( WPezHelpers::ez_true($arr_footer_main, 'active') ){
 
   foreach ( $arr_footer_main['ds'] as $str_key => $arr_value){
   
     if ( WPezHelpers::ez_ias( $arr_footer_main['ds'][$str_key]['index'], $arr_footer_main['ds'][$str_key]['active']) ) {
   
-      echo '<div class="' . sanitize_text_field($arr_footer_main['ds'][$str_key]['css']['markup']) . ' wp-ezbs-header-above' . '">';
+      echo '<div class="' . esc_attr($arr_footer_main['ds'][$str_key]['css']['markup']) . ' wp-ezbs-footer-main' . '">';
 	    WPezHelpers::ez_ds($arr_footer_main['ds'][$str_key]['index'], $arr_footer_main['ds'][$str_key]['active'] );
 	  echo '</div>';
     }

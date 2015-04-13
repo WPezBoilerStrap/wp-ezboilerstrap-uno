@@ -28,7 +28,7 @@ if (!defined('ABSPATH')) {
 
 $arr_head = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_head['active']) ){
+if ( WPezHelpers::ez_true($arr_head, 'active') ){
 ?>
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

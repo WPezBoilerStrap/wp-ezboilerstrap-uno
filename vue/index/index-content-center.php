@@ -30,9 +30,9 @@ if (!defined('ABSPATH')) {
 
 $arr_index_content_center = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WPezHelpers::ez_true($arr_index_content_center['active']) ){
+if ( WPezHelpers::ez_true($arr_index_content_center, 'active')){
 
-  echo '<div class="' . sanitize_text_field($arr_index_content_center['markup']['wrap_class']) . ' wp-ezbs-content-center' . '">';
+  echo '<div class="' . esc_attr($arr_index_content_center['markup']['wrap_class']) . ' wp-ezbs-content-center' . '">';
 
   
   WPezHelpers::ez_gtp( $arr_index_content_center['tp']['archive_header']['slug'], $arr_index_content_center['tp']['archive_header']['name'], $arr_index_content_center['tp']['archive_header']['active'] );		

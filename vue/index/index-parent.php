@@ -24,7 +24,7 @@
 
 $arr_index_parent = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WPezHelpers::ez_true($arr_index_parent['active']) ){
+if ( WPezHelpers::ez_true($arr_index_parent, 'active') ){
 
   WPezHelpers::ez_gtp( $arr_index_parent['tp']['breadcrumbs']['slug'], $arr_index_parent['tp']['breadcrumbs']['name'], $arr_index_parent['tp']['breadcrumbs']['active'] );
   
@@ -44,8 +44,8 @@ if ( WPezHelpers::ez_true($arr_index_parent['active']) ){
   WPezHelpers::ez_gtp( $arr_index_parent['tp']['content_above_below']['slug'], $arr_index_parent['tp']['content_above_below']['name'], $arr_index_parent['tp']['content_above_below']['active'] );
 
 
-  echo '<div class="' . sanitize_text_field($arr_index_parent['markup']['container_class']) . '">';
-    echo '<div class="' . sanitize_text_field($arr_index_parent['markup']['row_class']) . '">';
+  echo '<div class="' . esc_attr($arr_index_parent['markup']['container_class']) . '">';
+    echo '<div class="' . esc_attr($arr_index_parent['markup']['row_class']) . '">';
 
     WPezHelpers::ez_gtp( $arr_index_parent['tp']['aside_left']['slug'], $arr_index_parent['tp']['aside_left']['name'], $arr_index_parent['tp']['aside_left']['active'] );
 

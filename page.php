@@ -30,7 +30,7 @@ get_header();
 
 $arr_page = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_page['active']) ){
+if ( WPezHelpers::ez_true($arr_page, 'active') ){
 
   WPezHelpers::ez_gtp( $arr_page['tp']['page_parent']['slug'], $arr_page['tp']['page_parent']['name'], $arr_page['tp']['page_parent']['active'] );
 

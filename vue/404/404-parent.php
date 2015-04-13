@@ -28,11 +28,11 @@ get_header();
 
 $arr_404_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_404_parent['active']) ){
+if ( WPezHelpers::ez_true($arr_404_parent, 'active') ){
 
-  echo '<div class="' . sanitize_text_field( $arr_404_parent['markup']['wrap_class'] ) . '">';
-    echo '<div class="' . sanitize_text_field( $arr_404_parent['markup']['container_class'] ) . '">';
-      echo '<div class="' . sanitize_text_field( $arr_404_parent['markup']['row_class'] ) . '">';
+  echo '<div class="' . esc_attr( $arr_404_parent['markup']['wrap_class'] ) . '">';
+    echo '<div class="' . esc_attr( $arr_404_parent['markup']['container_class'] ) . '">';
+      echo '<div class="' . esc_attr( $arr_404_parent['markup']['row_class'] ) . '">';
 	
 	    WPezHelpers::ez_gtp( $arr_404_parent['tp']['aside_left']['slug'], $arr_404_parent['tp']['aside_left']['name'], $arr_404_parent['tp']['aside_left']['active'] );
 		

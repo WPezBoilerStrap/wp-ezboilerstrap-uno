@@ -24,10 +24,10 @@
 
 $arr_aside_right_wrap = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if( WPezHelpers::ez_true($arr_aside_right_wrap['active']) ){
+if( WPezHelpers::ez_true($arr_aside_right_wrap, 'active') ){
   
   echo '<aside>';
-    echo '<div class="' . sanitize_text_field($arr_aside_right_wrap['markup']['wrap_class']) . ' wp-ezbs-aside-right-wrap wp-ezbs-aside-wrap' . '">';
+    echo '<div class="' . esc_attr($arr_aside_right_wrap['markup']['wrap_class']) . ' wp-ezbs-aside-right-wrap wp-ezbs-aside-wrap' . '">';
 
 	  WPezHelpers::ez_gtp( $arr_aside_right_wrap['tp']['main']['slug'], $arr_aside_right_wrap['tp']['main']['name'], $arr_aside_right_wrap['tp']['main']['active'] );
 	  

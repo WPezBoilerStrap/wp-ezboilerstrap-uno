@@ -23,10 +23,10 @@
  
 $arr_footer_bottom = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_footer_bottom['active']) ){
+if ( WPezHelpers::ez_true($arr_footer_bottom, 'active') ){
 
-  echo '<div class="' . sanitize_text_field($arr_footer_bottom['markup']['container_class']) . '">';
-    echo '<p class="' . sanitize_text_field($arr_footer_bottom['markup']['left_class']) . '">' . sanitize_text_field($arr_footer_bottom['markup']['left_text']). '</p>';
-    echo '<p class="' . sanitize_text_field($arr_footer_bottom['markup']['right_class']) . '"><a href="#">' . sanitize_text_field($arr_footer_bottom['markup']['right_text']) . '</a></p>';
-  echo '</div>';
+  echo '<div class="' . esc_attr($arr_footer_bottom['markup']['container_class']) . ' wp-ezbs-footer-bottom' .  '">';
+    echo '<p class="' . esc_attr($arr_footer_bottom['markup']['left_class']) . '">' . esc_attr($arr_footer_bottom['markup']['left_text']). '</p>';
+    echo '<p class="' . esc_attr($arr_footer_bottom['markup']['right_class']) . '"><a href="#">' . esc_attr($arr_footer_bottom['markup']['right_text']) . '</a></p>';
+  echo '</div>';http://moz.com/blog/15-seo-best-practices-for-structuring-urls
 }

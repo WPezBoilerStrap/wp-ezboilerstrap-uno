@@ -24,21 +24,21 @@
 <?php
 $arr_menu_main = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_menu_main['active']) ){	
+if ( WPezHelpers::ez_true($arr_menu_main, 'active') ){	
 
-	echo '<div class="' . sanitize_text_field($arr_menu_main['markup']['wrap_class']) . '">';
-		echo '<div class="' . sanitize_text_field($arr_menu_main['markup']['navbar_class']) . '">';
-		  echo 	'<div class="' . sanitize_text_field($arr_menu_main['markup']['navbar_inner_class']) . '">';
+	echo '<div class="' . esc_attr($arr_menu_main['markup']['wrap_class']) . '">';
+		echo '<div class="' . esc_attr($arr_menu_main['markup']['navbar_class']) . '">';
+		  echo 	'<div class="' . esc_attr($arr_menu_main['markup']['navbar_inner_class']) . '">';
 				  			
 				WPezHelpers::ez_gtp( $arr_menu_main['tp']['menu_main_brand']['slug'], $arr_menu_main['tp']['menu_main_brand']['name'], $arr_menu_main['tp']['menu_main_brand']['active'] );
 
-                if ( WPezHelpers::ez_array_pass($arr_menu_main['menu_args'])  && WPezHelpers::ez_true($arr_menu_main['menu_args']['active']) ){
+                if ( WPezHelpers::ez_array_pass($arr_menu_main['menu_args'])  && WPezHelpers::ez_true($arr_menu_main['menu_args'], 'active') ){
 				
 				  $str_wp_nav_menu = wp_nav_menu( $arr_menu_main['menu_args'] );
 				 
 				   if ( ! empty ($str_wp_nav_menu) ){
 				  ?>
-				     <button type="button" class="<?php echo sanitize_text_field($arr_menu_main['markup']['button_class']) ?>" data-toggle="<?php echo sanitize_text_field($arr_menu_main['markup']['button_data_toggle']) ?>" data-target="<?php echo sanitize_text_field($arr_menu_main['markup']['data_target']) ?>">
+				     <button type="button" class="<?php echo esc_attr($arr_menu_main['markup']['button_class']) ?>" data-toggle="<?php echo esc_attr($arr_menu_main['markup']['button_data_toggle']) ?>" data-target="<?php echo esc_attr($arr_menu_main['markup']['data_target']) ?>">
 					   <span class="sr-only">Toggle navigation</span>
 				       <span class="icon-bar"></span>
 					   <span class="icon-bar"></span>

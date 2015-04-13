@@ -30,20 +30,20 @@ if ( !defined('ABSPATH') ) {
 
 $arr_search_title = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WPezHelpers::ez_true($arr_search_title['active']) ){
+if ( WPezHelpers::ez_true($arr_search_title, 'active') ){
 
   // title
-  echo '<' . sanitize_text_field($arr_search_title['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_search_title['markup']['title_class']) .  '">';
+  echo '<' . esc_attr($arr_search_title['markup']['title_tag']) . ' class="' . esc_attr($arr_search_title['markup']['title_class']) .  '">';
   
-    echo sanitize_text_field($arr_search_title['markup']['title']);
+    echo esc_attr($arr_search_title['markup']['title']);
   
-  echo '</' . sanitize_text_field($arr_search_title['markup']['title_tag']) . '>';
+  echo '</' . esc_attr($arr_search_title['markup']['title_tag']) . '>';
   
   // query
-  echo '<' . sanitize_text_field($arr_search_title['markup']['query_tag']) . ' class="' . sanitize_text_field($arr_search_title['markup']['query_class']) . '">';
+  echo '<' . esc_attr($arr_search_title['markup']['query_tag']) . ' class="' . esc_attr($arr_search_title['markup']['query_class']) . '">';
   
-    echo sanitize_text_field($arr_search_title['markup']['get_search_query']);
+    echo esc_attr($arr_search_title['markup']['get_search_query']);
 	
-  echo '</' . sanitize_text_field($arr_search_title['markup']['query_tag']) . '>';
+  echo '</' . esc_attr($arr_search_title['markup']['query_tag']) . '>';
   
 }

@@ -30,11 +30,11 @@ if (!defined('ABSPATH')) {
 
 $arr_index_post_meta_below = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WPezHelpers::ez_true($arr_index_post_meta_below['active']) ){
+if ( WPezHelpers::ez_true($arr_index_post_meta_below, 'active') ){
 
 global $post;
   
-  echo '<div class="' . sanitize_text_field($arr_index_post_meta_below['markup']['wrap_class']) . ' wp-ezbs-index-meta  wp-ezbs-index-meta-below' . '">';
+  echo '<div class="' . esc_attr($arr_index_post_meta_below['markup']['wrap_class']) . ' wp-ezbs-index-meta  wp-ezbs-index-meta-below' . '">';
   
 echo '<p class="meta wp-ezbs-meta-above">';
 echo '<h1>TODO - Meta Below</h1>';

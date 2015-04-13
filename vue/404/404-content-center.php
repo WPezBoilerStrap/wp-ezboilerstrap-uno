@@ -26,23 +26,23 @@ if ( !defined('ABSPATH') ) {
 
 $arr_404_content_center = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_404_content_center['active']) ){
+if ( WPezHelpers::ez_true($arr_404_content_center, 'active') ){
 
-	echo '<' . sanitize_text_field( $arr_404_content_center['markup']['title_tag'] ) . ' class="' . sanitize_text_field( $arr_404_content_center['markup']['title_class'] ). '">' . sanitize_text_field( $arr_404_content_center['markup']['title'] ) .  '</' . sanitize_text_field( $arr_404_content_center['markup']['title_tag'] ) . '>';
-	echo '<p class="' . sanitize_text_field( $arr_404_content_center['markup']['lead_class'] ) . '">' . sanitize_text_field( $arr_404_content_center['markup']['lead'] ) . '</p>';
+	echo '<' . esc_attr( $arr_404_content_center['markup']['title_tag'] ) . ' class="' . esc_attr( $arr_404_content_center['markup']['title_class'] ). '">' . esc_attr( $arr_404_content_center['markup']['title'] ) .  '</' . esc_attr( $arr_404_content_center['markup']['title_tag'] ) . '>';
+	echo '<p class="' . esc_attr( $arr_404_content_center['markup']['lead_class'] ) . '">' . esc_attr( $arr_404_content_center['markup']['lead'] ) . '</p>';
 
-	echo '<div class="' . sanitize_text_field($arr_404_content_center['markup']['inner_wrap_class'])  . ' wp-ezbs-content-center wp-ezbs-404-content-center">';
+	echo '<div class="' . esc_attr($arr_404_content_center['markup']['inner_wrap_class'])  . ' wp-ezbs-content-center wp-ezbs-404-content-center">';
 	  
 	/**
      * TODO - clean up ezClass Theme Search class
 	 * $obj_ezc_theme_search = wpezThemeClassesSearch::ez_new();
 	 * $arr_get_search_form_ez = $obj_ezc_theme_search->get_search_form_ez( $obj_ezbs_options->property_get('_arr_searchform_404') );
 	 */
-	if ( WPezHelpers::ez_true($arr_404_content_center['searchform_custom']) ){
+	if ( WPezHelpers::ez_true($arr_404_content_center, 'searchform_custom') ){
 
 	  WPezHelpers::ez_gtp( $arr_404_content_center['tp']['searchform_custom']['slug'], $arr_404_content_center['tp']['searchform_custom']['name'], $arr_404_content_center['tp']['searchform_custom']['active'] );
 
-	}else{
+	} else {
 
 	  get_search_form();
 	}

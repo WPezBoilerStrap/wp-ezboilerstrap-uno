@@ -25,27 +25,27 @@
 
 $arr_search_content_center = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_search_content_center['active']) ){	
+if ( WPezHelpers::ez_true($arr_search_content_center, 'active') ){	
 
-  echo '<div class="' . sanitize_text_field($arr_search_content_center['markup']['search_wrap_class'])  . ' wp-ezbs-search-wrap-class">';
+  echo '<div class="' . esc_attr($arr_search_content_center['markup']['search_wrap_class'])  . ' wp-ezbs-search-wrap-class">';
 	  
 	/**
      * TODO - clean up ezClass Theme Search class
 	 * $obj_ezc_theme_search = wpezThemeClassesSearch::ez_new();
 	 * $arr_get_search_form_ez = $obj_ezc_theme_search->get_search_form_ez( $obj_ezbs_options->property_get('_arr_searchform_404') );
 	 */
-	if ( isset($arr_search_content_center['searchform_custom']) && $arr_search_content_center['searchform_custom'] === true ){
+	if (  WPezHelpers::ez_true($arr_search_content_center, 'searchform_custom') ){
 
 	  WPezHelpers::ez_gtp($arr_search_content_center['tp']['searchform_custom']['slug'], $arr_search_content_center['tp']['searchform_custom']['name'], $arr_search_content_center['tp']['searchform_custom']['active'] );
 
-	}else{
+	} else {
 
 	  get_search_form();
 	}
 	
 	echo '</div>';
 	
-    echo '<div class="' . sanitize_text_field($arr_search_content_center['markup']['wrap_class']) . ' wp-ezbs-search-content-center">';
+    echo '<div class="' . esc_attr($arr_search_content_center['markup']['wrap_class']) . ' wp-ezbs-search-content-center">';
   
       WPezHelpers::ez_gtp( $arr_search_content_center['tp']['title_above']['slug'], $arr_search_content_center['tp']['title_above']['name'], $arr_search_content_center['tp']['title_above']['active'] );
 

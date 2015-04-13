@@ -28,14 +28,14 @@ if (!defined('ABSPATH')) {
 
 $arr_single_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_single_parent['active']) ){
+if ( WPezHelpers::ez_true($arr_single_parent, 'active') ){
 
   while ( have_posts() ) : the_post(); 
   
     WPezHelpers::ez_gtp( $arr_single_parent['tp']['content_above']['slug'], $arr_single_parent['tp']['content_above']['name'], $arr_single_parent['tp']['content_above']['active'] );
 
-	echo '<div class="' . sanitize_text_field($arr_single_parent['markup']['container']) . '">';
-	  echo '<div class="' . sanitize_text_field($arr_single_parent['markup']['row']) . '">';
+	echo '<div class="' . esc_attr($arr_single_parent['markup']['container']) . '">';
+	  echo '<div class="' . esc_attr($arr_single_parent['markup']['row']) . '">';
 		  
 	    WPezHelpers::ez_gtp( $arr_single_parent['tp']['aside_left']['slug'], $arr_single_parent['tp']['aside_left']['name'], $arr_single_parent['tp']['aside_left']['active'] );
 	  

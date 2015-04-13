@@ -29,11 +29,11 @@ if ( !defined('ABSPATH') ) {
 
 $arr_index_next_prev_control = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WPezHelpers::ez_true($arr_index_next_prev_control['active']) ){
+if ( WPezHelpers::ez_true($arr_index_next_prev_control, 'active') ){
 
   if ( ! empty($arr_index_next_prev_control['markup']['control']) && is_string($arr_index_next_prev_control['markup']['control']) ){
  
-    echo '<div class="' . sanitize_text_field($arr_index_next_prev_control['markup']['class']) . ' wp-ezbs-next-prev' . '">';
+    echo '<div class="' . esc_attr($arr_index_next_prev_control['markup']['class']) . ' wp-ezbs-next-prev' . '">';
       echo '<nav>';
         echo $arr_index_next_prev_control['markup']['control'];
 	  echo '</nav>';

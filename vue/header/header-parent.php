@@ -28,7 +28,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_header_parent = ezbsModl::get( basename(__FILE__, '.php') ); 	
 
-if ( WPezHelpers::ez_true($arr_header_parent['active']) ) {
+if ( WPezHelpers::ez_true($arr_header_parent, 'active') ) {
   
   WPezHelpers::ez_gtp( $arr_header_parent['tp']['header_above']['slug'], $arr_header_parent['tp']['header_above']['name'], $arr_header_parent['tp']['header_above']['active'] );
 		

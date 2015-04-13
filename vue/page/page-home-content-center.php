@@ -24,13 +24,13 @@
 
 $arr_page_home_content_center = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_page_home_content_center['active']) ){
+if ( WPezHelpers::ez_true($arr_page_home_content_center, 'active') ){
   
-  echo '<div class="' . sanitize_text_field($arr_page_home_content_center['markup']['wrap_class']) . ' wp-ezbs-content-center' . '">';
+  echo '<div class="' . esc_attr($arr_page_home_content_center['markup']['wrap_class']) . ' wp-ezbs-content-center' . '">';
     
 	WPezHelpers::ez_gtp( $arr_page_home_content_center['tp']['title_above']['slug'], $arr_page_home_content_center['tp']['title_above']['name'], $arr_page_home_content_center['tp']['title_above']['active'] );
 	
-	echo '<' . sanitize_text_field($arr_page_home_content_center['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_page_home_content_center['markup']['title_class']) .' wp-ezbs-page-title wp-ezbs-page-home-title">' . get_the_title() . '</' . sanitize_text_field($arr_page_home_content_center['markup']['title_tag']). '>';
+	echo '<' . esc_attr($arr_page_home_content_center['markup']['title_tag']) . ' class="' . esc_attr($arr_page_home_content_center['markup']['title_class']) .' wp-ezbs-page-title wp-ezbs-page-home-title">' . get_the_title() . '</' . esc_attr($arr_page_home_content_center['markup']['title_tag']). '>';
 
 	WPezHelpers::ez_gtp( $arr_page_home_content_center['tp']['title_below']['slug'], $arr_page_home_content_center['tp']['title_below']['name'], $arr_page_home_content_center['tp']['title_below']['active'] );
 

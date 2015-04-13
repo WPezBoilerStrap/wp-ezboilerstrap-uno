@@ -25,13 +25,13 @@
 
 $arr_aside_right_ds = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_aside_right_ds['active']) )  {  
+if ( WPezHelpers::ez_true($arr_aside_right_ds, 'active') )  {  
 
   foreach ( $arr_aside_right_ds['ds'] as $str_key => $arr_value){
 	
     if ( WPezHelpers::ez_ias( $arr_aside_right_ds['ds'][$str_key]['index'], $arr_aside_right_ds['ds'][$str_key]['active']) ) {
 	
-      echo '<div class="' . sanitize_text_field($arr_footer_below['ds'][$str_key]['markup']['class']) . ' wp-ezbs-aside wp-ezbs-aside-right' . '">';
+      echo '<div class="' . esc_attr($arr_footer_below['ds'][$str_key]['markup']['class']) . ' wp-ezbs-aside wp-ezbs-aside-right' . '">';
 	    WPezHelpers::ez_ds($arr_aside_right_ds['ds'][$str_key]['index'], $arr_aside_right_ds['ds'][$str_key]['active'] );
 	  echo '</div>';
     }		

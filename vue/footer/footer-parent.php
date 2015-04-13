@@ -27,7 +27,7 @@ if ( !defined('ABSPATH') ) {
 
 $arr_footer_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_footer_parent['active']) ){	
+if ( WPezHelpers::ez_true($arr_footer_parent, 'active') ){	
 	
   echo '<footer>';
 

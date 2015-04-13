@@ -28,14 +28,14 @@ if (!defined('ABSPATH')) {
 
 $arr_search_parent = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_search_parent['active']) ){
+if ( WPezHelpers::ez_true($arr_search_parent, 'active') ){
 
   WPezHelpers::ez_gtp( $arr_search_parent['tp']['breadcrumbs']['slug'], $arr_search_parent['tp']['breadcrumbs']['name'], $arr_search_parent['tp']['breadcrumbs']['active'] );
   
   WPezHelpers::ez_gtp( $arr_search_parent['tp']['content_above']['slug'], $arr_search_parent['tp']['content_above']['name'], $arr_search_parent['tp']['content_above']['active'] );
 
-  echo '<div class="' . sanitize_text_field($arr_search_parent['markup']['container']) . '">';
-	echo '<div class="' . sanitize_text_field($arr_search_parent['markup']['row']) . '">';  
+  echo '<div class="' . esc_attr($arr_search_parent['markup']['container']) . '">';
+	echo '<div class="' . esc_attr($arr_search_parent['markup']['row']) . '">';  
 	
 	  WPezHelpers::ez_gtp( $arr_search_parent['tp']['aside_left']['slug'], $arr_search_parent['tp']['aside_left']['name'], $arr_search_parent['tp']['aside_left']['active'] );
 

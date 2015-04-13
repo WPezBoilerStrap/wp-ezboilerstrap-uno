@@ -27,15 +27,15 @@ if ( !defined('ABSPATH') ) {
 
 $arr_single_content_center = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_single_content_center['active']) ){	
+if ( WPezHelpers::ez_true($arr_single_content_center, 'active') ){	
 
-  echo '<div class="' . sanitize_text_field($arr_single_content_center['markup']['wrap_class']) . ' wp-ezbs-column-center' . '">';
+  echo '<div class="' . esc_attr($arr_single_content_center['markup']['wrap_class']) . ' wp-ezbs-column-center' . '">';
   
     WPezHelpers::ez_gtp( $arr_single_content_center['tp']['title_above']['slug'], $arr_single_content_center['tp']['title_above']['name'], $arr_single_content_center['tp']['title_above']['active'] );
 
-    echo '<' . sanitize_text_field($arr_single_content_center['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_single_content_center['markup']['title_class']) . '">';
+    echo '<' . esc_attr($arr_single_content_center['markup']['title_tag']) . ' class="' . esc_attr($arr_single_content_center['markup']['title_class']) . '">';
       echo get_the_title();
-    echo '</' . sanitize_text_field($arr_single_content_center['markup']['title_tag']) . '>';
+    echo '</' . esc_attr($arr_single_content_center['markup']['title_tag']) . '>';
 
     WPezHelpers::ez_gtp( $arr_single_content_center['tp']['title_below']['slug'], $arr_single_content_center['tp']['title_below']['name'], $arr_single_content_center['tp']['title_below']['active'] );
 

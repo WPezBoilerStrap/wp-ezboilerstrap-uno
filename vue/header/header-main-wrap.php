@@ -27,10 +27,10 @@ if ( !defined('ABSPATH') ) {
 
 $arr_header_main_wrap = ezbsModl::get( basename(__FILE__, '.php') ); 	
 
-if ( WPezHelpers::ez_true($arr_header_main_wrap['active']) ) { 	
+if ( WPezHelpers::ez_true($arr_header_main_wrap, 'active') ) { 	
 
-  echo '<div class="' . sanitize_text_field($arr_header_main_wrap['markup']['container_class']) . '">';
-    echo '<div class="' . sanitize_text_field($arr_header_main_wrap['markup']['row_class']). '">';
+  echo '<div class="' . esc_attr($arr_header_main_wrap['markup']['container_class']) . '">';
+    echo '<div class="' . esc_attr($arr_header_main_wrap['markup']['row_class']). '">';
 	
 	  WPezHelpers::ez_gtp( $arr_header_main_wrap['tp']['logo']['slug'], $arr_header_main_wrap['tp']['logo']['name'], $arr_header_main_wrap['tp']['logo']['active'] );
 	  

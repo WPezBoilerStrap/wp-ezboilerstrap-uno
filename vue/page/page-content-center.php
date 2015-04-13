@@ -28,19 +28,19 @@ if ( !defined('ABSPATH') ) {
 
 $arr_page_content_center = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_page_content_center['active']) ){
+if ( WPezHelpers::ez_true($arr_page_content_center, 'active') ){
 
   echo '<header>';
-    echo '<' . sanitize_text_field($arr_page_content_center['markup']['title_tag']) . ' class="' . sanitize_text_field($arr_page_content_center['markup']['title_class']) . ' wp-ezbs-page-title-class wp-ezbs-title-class' . '">';
+    echo '<' . esc_attr($arr_page_content_center['markup']['title_tag']) . ' class="' . esc_attr($arr_page_content_center['markup']['title_class']) . ' wp-ezbs-page-title-class wp-ezbs-title-class' . '">';
 	
 	  echo get_the_title();
 	
-	echo '</' . sanitize_text_field($arr_page_content_center['markup']['title_tag']) . '>';
+	echo '</' . esc_attr($arr_page_content_center['markup']['title_tag']) . '>';
   echo '</header>';
 
   WPezHelpers::ez_gtp( $arr_page_content_center['tp']['title_below']['slug'], $arr_page_content_center['tp']['title_below']['name'], $arr_page_content_center['tp']['title_below']['active'] );
 
-  echo '<span class="' . sanitize_text_field($arr_page_content_center['markup']['content_class']) . 'wp-ezbs-the-content wp-ezbs-page-the-content">';
+  echo '<span class="' . esc_attr($arr_page_content_center['markup']['content_class']) . ' wp-ezbs-the-content wp-ezbs-the-content-page">';
   /**
    * FYI: echo get_the_content(); -  mucked with some shortcodes so we'll go with the_content()
    */

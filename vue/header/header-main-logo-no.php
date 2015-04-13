@@ -30,18 +30,18 @@ if ( !defined('ABSPATH') ) {
 
 $arr_header_main_logo_no = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_header_main_logo_no['active']) ){
+if ( WPezHelpers::ez_true($arr_header_main_logo_no, 'active') ){
 
 ?>
 
-<div class="<?php echo sanitize_text_field($arr_header_main_logo_no['css']['class_left'])?>">
+<div class="<?php echo esc_attr($arr_header_main_logo_no['css']['class_left'])?>">
 	<a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 		<h2><?php echo get_bloginfo( 'name', 'display' ); ?></h2>
 		<h5><?php echo get_bloginfo( 'description', 'display' ); ?></h5>
 	</a>
 </div>	
 
-<div class="<?php echo sanitize_text_field($arr_header_main_logo_no['css']['class_right'])?>">
+<div class="<?php echo esc_attr($arr_header_main_logo_no['css']['class_right'])?>">
 </div>
 
 <?php

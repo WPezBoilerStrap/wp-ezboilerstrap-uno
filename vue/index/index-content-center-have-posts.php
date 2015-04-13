@@ -30,15 +30,15 @@ if (!defined('ABSPATH')) {
 
 $arr_index_content_center_have_posts = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WPezHelpers::ez_true($arr_index_content_center_have_posts['active']) ){
+if ( WPezHelpers::ez_true($arr_index_content_center_have_posts, 'active') ){
 
-  echo '<div class="' . sanitize_text_field($arr_index_content_center_have_posts['markup']['wrap_class']) . '">';
+  echo '<div class="' . esc_attr($arr_index_content_center_have_posts['markup']['wrap_class']) . '">';
  ?> 
 	<div id="post-<?php the_ID() ?>" <?php post_class() ?>">
 	
 		<a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title();?>">
 		
-			<<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['title_tag']) ?> class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['title_class']) ?>"><?php echo get_the_title();?></<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['title_tag']) ?>>
+			<<?php echo esc_attr($arr_index_content_center_have_posts['markup']['title_tag']) ?> class="<?php echo esc_attr($arr_index_content_center_have_posts['markup']['title_class']) ?>"><?php echo get_the_title();?></<?php echo esc_attr($arr_index_content_center_have_posts['markup']['title_tag']) ?>>
 		</a>
 		<?php
 		
@@ -48,7 +48,7 @@ if ( WPezHelpers::ez_true($arr_index_content_center_have_posts['active']) ){
 		<?php 
 		// the thumbnail
 		if ( has_post_thumbnail() ){ ?>
-		  <div class="<?php echo sanitize_text_field($arr_index_content_center_have_posts['markup']['img_wrap_class']) ?> wp-ezbs-post-thumbnail-wrap">
+		  <div class="<?php echo esc_attr($arr_index_content_center_have_posts['markup']['img_wrap_class']) ?> wp-ezbs-post-thumbnail-wrap">
 		  
 		    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>">
 			  <?php get_the_post_thumbnail($arr_index_content_center_have_posts['markup']['post_thumbnail_args']);?>
@@ -62,7 +62,7 @@ if ( WPezHelpers::ez_true($arr_index_content_center_have_posts['active']) ){
 		
 		if ( ! empty($str_the_excerpt) ){
 
-		   echo '<div class="' . sanitize_text_field($arr_index_content_center_have_posts['markup']['excerpt_wrap_class']) . ' wp-ezbs-the-excerpt">';
+		   echo '<div class="' . esc_attr($arr_index_content_center_have_posts['markup']['excerpt_wrap_class']) . ' wp-ezbs-the-excerpt">';
 		  
 		    echo $str_the_excerpt;
 				

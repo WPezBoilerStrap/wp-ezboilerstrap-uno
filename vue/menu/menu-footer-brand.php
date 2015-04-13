@@ -21,11 +21,11 @@ if ( !defined('ABSPATH') ) {
 
 $arr_menu_footer_brand = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_menu_footer_brand['active']) ){	
+if ( WPezHelpers::ez_true($arr_menu_footer_brand, 'active') ){	
 
-  echo '<span id="' . sanitize_text_field($arr_menu_footer_brand['markup']['wrap_id']) . '" class="' . sanitize_text_field($arr_menu_footer_brand['markup']['wrap_class']) . ' wp-ezbs-menu-class-brand wp-ezbs-menu-class-brand-global' . '">';
+  echo '<span id="' . esc_attr($arr_menu_footer_brand['markup']['wrap_id']) . '" class="' . esc_attr($arr_menu_footer_brand['markup']['wrap_class']) . ' wp-ezbs-menu-class-brand wp-ezbs-menu-class-brand-global' . '">';
 
-	echo '<span class="' . sanitize_text_field($arr_menu_footer_brand['markup']['title_class']) . '">' . sanitize_text_field($arr_menu_footer_brand['markup']['title']) . '</span>';
+	echo '<span class="' . esc_attr($arr_menu_footer_brand['markup']['title_class']) . '">' . esc_attr($arr_menu_footer_brand['markup']['title']) . '</span>';
 	
   echo '</span>';	
 }

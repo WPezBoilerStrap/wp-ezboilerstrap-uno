@@ -27,13 +27,13 @@ if ( !defined('ABSPATH') ) {
 
 $arr_header_above = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_header_above['active']) ){
+if ( WPezHelpers::ez_true($arr_header_above, 'active') ){
 
   foreach ( $arr_header_above['ds'] as $str_key => $arr_value){
     
 	if ( WPezHelpers::ez_ias( $arr_header_above['ds'][$str_key]['index'], $arr_header_above['ds'][$str_key]['active']) ) {
 	
-	  echo '<div class="' . sanitize_text_field($arr_header_above['ds'][$str_key]['markup']['class']) . ' wp-ezbs-header-above' . '">';
+	  echo '<div class="' . esc_attr($arr_header_above['ds'][$str_key]['markup']['class']) . ' wp-ezbs-header-above' . '">';
 	    WPezHelpers::ez_ds($arr_header_above['ds'][$str_key]['index'], $arr_header_above['ds'][$str_key]['active'] );
 	  echo '</div>';
     }

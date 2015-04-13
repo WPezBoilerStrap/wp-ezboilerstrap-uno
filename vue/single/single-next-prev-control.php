@@ -30,11 +30,11 @@ if ( !defined('ABSPATH') ) {
 
 $arr_single_next_prev_control = ezbsModl::get( basename(__FILE__, '.php') );
 
-if ( WPezHelpers::ez_true($arr_single_next_prev_control['active']) ){
+if ( WPezHelpers::ez_true($arr_single_next_prev_control, 'active') ){
 
   if ( ! empty($arr_single_next_prev_control['markup']['control']) ){
  
-    echo '<div class="' . sanitize_text_field($arr_single_next_prev_control['markup']['class']) . '">';
+    echo '<div class="' . esc_attr($arr_single_next_prev_control['markup']['class']) . '">';
   
       echo $arr_single_next_prev_control['markup']['control'];
 	

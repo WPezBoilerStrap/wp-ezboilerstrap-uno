@@ -32,7 +32,7 @@ get_header();
 
 $arr_index = ezbsModl::get( basename(__FILE__, '.php') ); 
 
-if ( WPezHelpers::ez_true($arr_index['active'])){
+if ( WPezHelpers::ez_true($arr_index, 'active')){
 
   WPezHelpers::ez_gtp( $arr_index['tp']['index_parent']['slug'], $arr_index['tp']['index_parent']['name'], $arr_index['tp']['index_parent']['active'] );
 
